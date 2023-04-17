@@ -1,0 +1,21 @@
+.navbar {
+    box-shadow: rgba(0, 0, 0, .15) 0px -2px 10px 0px;
+}
+
+.containerNavbar {
+    padding: .5em 0;
+}
+
+.brand {
+    font-size: 1.2em;
+    color: #EB608C;
+}
+
+.brand span {
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.active {
+    color: #EB608C;
+}
