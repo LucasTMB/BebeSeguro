@@ -1,4 +1,11 @@
+// hooks
 import { NavLink } from "react-router-dom";
+import { useAuthentication } from "../hooks/useAuthentication";
+
+// context
+import { useAuthValue } from "../context/AuthContext";
+
+// styles
 import styles from "./Header.module.css";
 
 import Container from 'react-bootstrap/Container';
@@ -6,9 +13,10 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
-import React from 'react'
-
 const Header = () => {
+  const {user} = useAuthValue();
+  const {logout} = useAuthentication();
+
   return (
     <Navbar bg="light" expand="lg" className={styles.navbar}>
       <Container className={styles.containerNavbar}>
@@ -27,38 +35,61 @@ const Header = () => {
             >
                 Loja
             </NavLink>
-            <NavLink 
-                to="/guides" 
-                className="nav-link"
-            >
-                Guias
-            </NavLink>
-            <NavDropdown title="Calculadoras" id="basic-nav-dropdown">
-              <NavLink to="/" className="nav-link">
-                Calculadora de níveis de hCG
-              </NavLink>
-              <NavLink to="/" className="nav-link">
-                Calculadora gestacional
-              </NavLink>
-              <NavLink to="/" className="nav-link">
-                Calculadora de tempo de gravidez para FIV e TEC
-              </NavLink>
-              <NavLink to="/" className="nav-link">
-                Calculadora de data de nascimento por ultrassom
-              </NavLink>
-            </NavDropdown>
-            <NavLink 
-                to="/community" 
-                className="nav-link"
-            >
-                Comunidade
-            </NavLink>
+            {user && (
+              <>
+                <NavLink 
+                    to="/guides" 
+                    className="nav-link"
+                >
+                    Guias
+                </NavLink>
+                <NavDropdown title="Calculadoras" id="basic-nav-dropdown">
+                  <NavLink to="/" className="nav-link">
+                    Calculadora de níveis de hCG
+                  </NavLink>
+                  <NavLink to="/" className="nav-link">
+                    Calculadora gestacional
+                  </NavLink>
+                  <NavLink to="/" className="nav-link">
+                    Calculadora de tempo de gravidez para FIV e TEC
+                  </NavLink>
+                  <NavLink to="/" className="nav-link">
+                    Calculadora de data de nascimento por ultrassom
+                  </NavLink>
+                </NavDropdown>
+                <NavLink 
+                    to="/community" 
+                    className="nav-link"
+                >
+                    Comunidade
+                </NavLink>
+              </>
+            )}
             <NavLink 
                 to="/about" 
                 className="nav-link"
             >
                 Sobre Nós
             </NavLink>
+            {!user && (
+              <>
+                <NavLink
+                  to="/login"
+                  className="nav-link"
+                >
+                  Entrar
+                </NavLink>
+                <NavLink
+                  to="/register"
+                  className="nav-link"
+                >
+                  Cadastrar
+                </NavLink>
+              </>
+            )}
+            {user && (
+              <button onClick={logout}>Sair</button>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Container>
