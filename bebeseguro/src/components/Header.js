@@ -83,7 +83,7 @@ const Header = () => {
                   to="/register"
                   className="nav-link"
                 >
-                  Cadastrar
+                  Cadastre-se
                 </NavLink>
               </>
             )}

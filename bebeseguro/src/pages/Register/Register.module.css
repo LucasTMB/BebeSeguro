@@ -1,7 +1,97 @@
 .register {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #A97676;
+
+    height: calc(100vh - 72px);
+}
+
+.slogan,
+.form {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slogan h1 {
+    font-size: 5rem;
+    margin-bottom: .3em;
+    color: #FFF4F4;
+    font-family: 'Roboto Slab', serif;
+}
+
+.slogan p {
+    font-size: 1.5em;
+    color: #FFF4F4;
+    font-family: 'Indie Flower', cursive;
+    width: 60%;
     text-align: center;
 }
 
-.register p {
-    color: #aaa;
+.slogan h1,
+.slogan p {
+    transition: 0.5s all;
+}
+
+.slogan h1:hover,
+.slogan p:hover {
+    transform: scale(1.1);
+}
+
+.form Form {
+    background-color: #BC8080;
+    width: 60%;
+    padding: 3em 2em;
+    border-radius: 20px;
+}
+
+.form Form Button {
+    background-color: #946262;
+    border: none;
+    font-weight: 600;
+    margin-top: .5em;
+    transition: 0.5s all;
+}
+
+.form Form Button:hover {
+    background-color: #A97676; 
+    transform: scale(1.1);
+}
+
+.alert {
+    margin-top: 1em;
+}
+
+@media screen and (max-width: 991px) {
+    .register {
+        min-height: calc(100vh - 92px);
+    }
+
+    .slogan,
+    .form {
+        width: 100%;
+        padding: 0 2em;
+        text-align: center;
+    }
+
+    .slogan h1 {
+        font-size: 3rem;
+    }
+
+    .slogan p {
+        font-size: 1.2em;
+    }
+
+    .form Form {
+        width: 100%;
+        padding: 2em;
+    }
+
+    .form Form Button {
+        margin-top: 1em;
+        width: 100%;
+    }
 }

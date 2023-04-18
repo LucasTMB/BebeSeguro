@@ -5,6 +5,33 @@ body {
     font-family: "Montserrat", sans-serif;
 }
 
+.form_input {
+    background-color: #D7AFAF;
+    color: #FFF4F4;
+    font-weight: 600;
+    border: none;
+    transition: 0.5s all;
+}
+
+.form_input::placeholder {
+    color: #FFF4F4;
+    font-weight: 600;
+}
+
+.form_input:focus {
+    background-color: #D7AFAF;
+    color: #FFF4F4;
+    border: none;
+    outline: none; 
+    box-shadow: 0 0 5px #654321;
+    transform: scale(1.05);
+}
+
+Button[disabled] {
+    background-color: #AAA;
+}
+
+/*
 input::placeholder,
 textarea::placeholder {
     font-family: "Montserrat", sans-serif;
@@ -31,4 +58,4 @@ a:hover,
 nav button:hover {
     color: #EE5D6F;
     border-color: #EE5D6F;
-}
+}*/

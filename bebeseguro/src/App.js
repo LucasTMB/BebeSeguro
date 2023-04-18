@@ -11,7 +11,6 @@ import { useAuthentication } from "./hooks/useAuthentication";
 import { AuthProvider } from "./context/AuthContext";
 
 // components
-import Navbar from './components/Navbar';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
@@ -46,18 +45,41 @@ function App() {
     <div className="App">
       <AuthProvider value={{user}}>
         <BrowserRouter>
-          {/*<Navbar />*/}
           <Header />
           <div className='containerApp'>
             <Routes>
-              <Route path='/' element={<Home />} />
-              <Route path='/store' element={<Store />} />
-              <Route path='/guides' element={<Guides />} />
-              <Route path='/calculators' element={<Calculators />} />
-              <Route path='/community' element={<Community />} />
-              <Route path='/about' element={<About />} />
-              <Route path='/login' element={<Login />} />
-              <Route path='/register' element={<Register />} />
+              <Route 
+                path='/' 
+                element={<Home />} 
+              />
+              <Route 
+                path='/store' 
+                element={<Store />} 
+              />
+              <Route 
+                path='/guides' 
+                element={user ? <Guides /> : <Navigate to="/login" />} 
+              />
+              <Route 
+                path='/calculators' 
+                element={user ? <Calculators /> : <Navigate to="/login" />} 
+              />
+              <Route 
+                path='/community' 
+                element={user ? <Community /> : <Navigate to="/login" />} 
+              />
+              <Route 
+                path='/about' 
+                element={<About />} 
+              />
+              <Route 
+                path='/login' 
+                element={!user ? <Login /> : <Navigate to="/" />} 
+              />
+              <Route 
+                path='/register' 
+                element={!user ? <Register /> : <Navigate to="/" />} 
+              />
             </Routes>
           </div>
           <Footer />

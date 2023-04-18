@@ -4,6 +4,10 @@ import { useAuthentication } from "../../hooks/useAuthentication";
 
 import { useState, useEffect } from "react";
 
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Alert from 'react-bootstrap/Alert';
+
 const Register = () => {
   const [displayName, setDisplayName] = useState("");
   const [email, setEmail] = useState("");
@@ -40,57 +44,58 @@ const Register = () => {
 
   return (
     <div className={styles.register}>
-      <h1>Cadastre-se para postar</h1>
-      <p>Crie seu usuário e compartilhe suas histórias</p>
-      <form onSubmit={handleSubmit}>
-        <label>
-          <span>Nome:</span>
-          <input 
-            type="text"
-            name="displayNome"
-            required
-            placeholder="Nome do usuário"
-            value={displayName}
-            onChange={(e) => setDisplayName(e.target.value)}
-          />
-        </label>
-        <label>
-          <span>E-mail:</span>
-          <input 
-            type="email"
-            name="email"
-            required
-            placeholder="E-mail do usuário"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </label>
-        <label>
-          <span>Senha:</span>
-          <input 
-            type="password"
-            name="password"
-            required
-            placeholder="Insira sua senha"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </label>
-        <label>
-          <span>Confirmação de senha:</span>
-          <input 
-            type="password"
-            name="confirmPassword"
-            required
-            placeholder="Confirme a sua senha"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-          />
-        </label>
-        {!loading && <button className="btn">Cadastrar</button>}
-        {loading && <button className="btn" disabled>Aguarde...</button>}
-        {error && <p className="error">{error}</p>}
-      </form>
+      <div className={styles.slogan}>
+        <h1>
+          BebeSeguro
+        </h1>
+        <p>
+          Cada dia é uma nova descoberta na jornada da maternidade.
+        </p>
+      </div>
+      <div className={styles.form}>
+        <Form onSubmit={handleSubmit}>
+          <Form.Group className="my-4" controlId="formBasicEmail">
+            <Form.Control 
+              className="form_input" 
+              type="text" 
+              placeholder="Nome"
+              onChange={(e) => setDisplayName(e.target.value)}
+            />
+          </Form.Group>
+
+          <Form.Group className="my-4" controlId="formBasicEmail">
+            <Form.Control 
+              className="form_input" 
+              type="email" 
+              placeholder="Email"
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </Form.Group>
+
+          <Form.Group className="my-4" controlId="formBasicPassword">
+            <Form.Control 
+              className="form_input" 
+              type="password" 
+              placeholder="Senha"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </Form.Group>
+
+          <Form.Group className="my-4" controlId="formBasicPassword">
+            <Form.Control 
+              className="form_input" 
+              type="password" 
+              placeholder="Confirme a sua senha"
+              onChange={(e) => setConfirmPassword(e.target.value)}
+            />
+          </Form.Group>
+
+          {!loading && <Button variant="primary" type="submit">Cadastrar</Button>}
+          {loading && <Button variant="primary" type="submit" disabled>Aguarde...</Button>}
+          {error && <Alert className={styles.alert} variant="danger">{error}</Alert>}
+
+        </Form>
+      </div>
     </div>
   )
 }
