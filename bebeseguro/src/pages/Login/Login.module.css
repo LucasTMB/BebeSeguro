@@ -56,6 +56,10 @@
     color: #FFF4F4;
 }
 
+.forget_password:hover {
+    text-decoration: underline;
+}
+
 .form Form Button {
     border: none;
     font-weight: 600;
