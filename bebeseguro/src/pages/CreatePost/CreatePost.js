@@ -125,7 +125,7 @@ const CreatePost = () => {
           />
         </Form.Group>
 
-        {!response.loading && <Button>Publicar</Button>}
+        {!response.loading && <Button type="submit">Publicar</Button>}
         {response.loading && <Button disabled>Aguarde...</Button>}
         {response.error && <Alert varianty="danger">{response.alert}</Alert>}
         {formError && <Alert varianty="danger">{formError}</Alert>}

@@ -3,13 +3,13 @@ import { getAnalytics } from "firebase/analytics";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBR5u1m_Ww4x5mcYeVjlPfssJF5xUUIodU",
-  authDomain: "bebeseguro-f45ce.firebaseapp.com",
-  projectId: "bebeseguro-f45ce",
-  storageBucket: "bebeseguro-f45ce.appspot.com",
-  messagingSenderId: "415221594957",
-  appId: "1:415221594957:web:9686caff43f69b49285504",
-  measurementId: "G-L31V00YV8P"
+  apiKey: "AIzaSyDydOxa_KeuNVxuI0BB6aqofeqUp0lxnw8",
+  authDomain: "bebeseguro-3e68a.firebaseapp.com",
+  projectId: "bebeseguro-3e68a",
+  storageBucket: "bebeseguro-3e68a.appspot.com",
+  messagingSenderId: "1068990393810",
+  appId: "1:1068990393810:web:6aecc6afa8020d5b266c0b",
+  measurementId: "G-WF1B3CLF1M"
 };
 
 const app = initializeApp(firebaseConfig);
