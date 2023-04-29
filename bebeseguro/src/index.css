@@ -27,6 +27,11 @@ body {
     transform: scale(1.05);
 }
 
+input:focus,
+textarea:focus {
+    outline: none;
+}
+
 Button[disabled] {
     background-color: #AAA;
 }
@@ -35,11 +40,6 @@ Button[disabled] {
 input::placeholder,
 textarea::placeholder {
     font-family: "Montserrat", sans-serif;
-}
-
-input:focus,
-textarea:focus {
-    outline: none;
 }
 
 a,
