@@ -20,7 +20,6 @@ import Store from "./pages/Store/Store";
 import Guides from "./pages/Guides/Guides";
 import Calculators from "./pages/Calculators/Calculators";
 import Community from "./pages/Community/Community";
-import CreatePost from "./pages/CreatePost/CreatePost";
 import About from "./pages/About/About";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
@@ -69,10 +68,6 @@ function App() {
               <Route 
                 path='/community' 
                 element={user ? <Community /> : <Navigate to="/login" />} 
-              />
-              <Route 
-                path='/community/posts/create'
-                element={user ? <CreatePost /> : <Navigate to="/login" />}
               />
               <Route 
                 path='/about' 
