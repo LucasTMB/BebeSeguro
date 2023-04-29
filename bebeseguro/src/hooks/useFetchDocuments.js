@@ -9,6 +9,7 @@ import {
 } from "firebase/firestore";
 
 export const useFetchDocuments = (docCollection, search = null, uid = null) => {
+    
     const [documents, setDocuments] = useState(null);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(null);
@@ -26,10 +27,26 @@ export const useFetchDocuments = (docCollection, search = null, uid = null) => {
             const collectionRef = await collection(db, docCollection);
 
             try {
-                let q = await query(
-                    collectionRef,
-                    orderBy("createAt", "desc")
-                );
+                let q;
+
+                if (search) {
+                    q = await query(
+                        collectionRef,
+                        where("tagsArray", "array-contains", search),
+                        orderBy("createAt", "desc")
+                    );
+                } else if (uid) {
+                    q = await query(
+                        collectionRef,
+                        where("uid", "==", uid),
+                        orderBy("createAt", "desc")
+                    );
+                } else {
+                    q = await query(
+                        collectionRef,
+                        orderBy("createAt", "desc")
+                    );
+                }
 
                 await onSnapshot(q, (querySnapshot) => {
                     setDocuments(
