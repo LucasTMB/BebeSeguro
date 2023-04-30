@@ -1,0 +1,42 @@
+.card {
+    width: 22%;
+    margin: 1em;
+    background-color: #BC8080;
+    border: none;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.image {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+}
+
+.title {
+    font-family: 'Roboto Slab', serif;
+    max-width: 90%;
+    color: #FEFEFE;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: .5em;
+}
+
+.createBy {
+    color: #FEFEFE;
+    margin: .5em;
+}
+
+.createBy span {
+    font-weight: 600;
+}
+
+/* Estilo para telas pequenas */
+@media (max-width: 767px) {
+    .card {
+      width: 100%;
+    }
+}

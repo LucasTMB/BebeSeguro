@@ -7,6 +7,10 @@ import { useFetchDocuments } from "../../hooks/useFetchDocuments";
 import { useState } from "react";
 
 // components
+import GuidePostDetails from "../../components/GuidePostDetails";
+
+// bootstrap
+import Button from 'react-bootstrap/Button';
 
 const Guides = () => {
   const {documents: posts, loading} = useFetchDocuments("posts");
@@ -35,10 +39,19 @@ const Guides = () => {
           placeholder="Ou busque por tags..."
           onChange={(e) => setQuery(e.target.value)} 
         />
-        <button>
+        <Button>
           Pesquisar
-        </button>
+        </Button>
       </form>
+      <div className={styles.guidesContainer}>
+        {loading && <p>Carregando...</p>}
+        {posts && posts.map((post) => <GuidePostDetails key={post.id} post={post} />)}
+        {posts && posts.length === 0 && (
+          <div>
+            <p>Não foram encontrados posts</p>
+          </div>
+        )}
+      </div>
     </div>
   )
 }
