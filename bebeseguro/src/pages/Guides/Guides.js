@@ -13,7 +13,7 @@ import GuidePostDetails from "../../components/GuidePostDetails";
 import Button from 'react-bootstrap/Button';
 
 const Guides = () => {
-  const {documents: posts, loading} = useFetchDocuments("posts");
+  const {documents: posts, loading} = useFetchDocuments("guide-posts");
 
   const [query, setQuery] = useState("");
 

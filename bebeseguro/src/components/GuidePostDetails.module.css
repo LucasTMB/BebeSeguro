@@ -1,4 +1,5 @@
 .card {
+    font-family: 'Roboto Slab', serif;
     width: 22%;
     margin: 1em;
     background-color: #BC8080;
@@ -17,21 +18,74 @@
 }
 
 .title {
-    font-family: 'Roboto Slab', serif;
+    display: flex;
+    align-items: center;
+    background-color: #FEFEFE;
+    height: 12%;
+}
+
+.title h2 {
     max-width: 90%;
-    color: #FEFEFE;
-    font-size: 1.2em;
-    font-weight: bold;
-    margin: .5em;
+    color: #A97676;
+    font-size: 1em;
+    font-weight: 700;
+    padding: .5em;
+}
+
+.icon,
+.tagsIcon,
+.calendar {
+    margin-right: 5px;
+}
+
+.createBy,
+.date,
+.cardButton {
+    margin-left: .5em;
+    margin-bottom: 2px;
 }
 
 .createBy {
+    display: flex;
+    align-items: center;
+    font-size: 1em;
     color: #FEFEFE;
-    margin: .5em;
 }
 
-.createBy span {
+.date {
+    display: flex;
+    align-items: center;
+    color: #FEFEFE;
+    font-size: 1em;
+}
+
+.tags {
+    display: flex;
+    color: #FEFEFE;
+    margin-left: .5em;
+}
+
+.tagsIcon {
+    margin-top: 5px;
+}
+
+.tags p {
+    margin-right: .3em;
+}
+
+.tags span {
+    font-weight: bold;
+}
+
+.cardButton {
+    background-color: #946262;
+    border: none;
+    border-radius: 0;
     font-weight: 600;
+}
+
+.cardButton:hover {
+    background-color: #A97676;
 }
 
 /* Estilo para telas pequenas */

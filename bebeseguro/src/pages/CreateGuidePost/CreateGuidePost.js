@@ -14,7 +14,7 @@ const CreateGuidePost = () => {
 
   const {user} = useAuthValue();
 
-  const {insertDocument, response} = useInsertDocument("posts");
+  const {insertDocument, response} = useInsertDocument("guide-posts");
 
   const navigate = useNavigate();
 
