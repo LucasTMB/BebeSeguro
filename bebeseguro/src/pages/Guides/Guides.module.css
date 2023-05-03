@@ -42,6 +42,15 @@
     background-color: #A97676; 
 }
 
+.createBtn {
+    margin-left: 0.5em;
+}
+
+.createBtn .createLink {
+    text-decoration: none;
+    color: #FEFEFE;
+}
+
 .guidesContainer {
     display: flex;
     justify-content: center;

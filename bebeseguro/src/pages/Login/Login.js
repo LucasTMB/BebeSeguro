@@ -73,7 +73,7 @@ const Login = () => {
 
           <>
             {!loading && <Button className={styles.btn_enter} variant="primary" type="submit">Entrar</Button>}
-            {loading && <Button className={styles.btn_enter} variant="primary" type="submit" disabled>Aguarde...</Button>}
+            {loading && <Button className={styles.btn_enter} variant="secondary" type="submit" disabled>Aguarde...</Button>}
             {!loading && 
               <NavLink to="/register">
                 <Button className={styles.btn_register}>Cadastre-se</Button>
@@ -81,7 +81,7 @@ const Login = () => {
             }
             {loading && 
               <NavLink to="/register">
-                <Button className={styles.btn_register} disabled>Aguarde...</Button>
+                <Button variant="secondary" disabled>Aguarde...</Button>
               </NavLink>
             }
           </>

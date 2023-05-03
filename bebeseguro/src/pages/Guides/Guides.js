@@ -5,6 +5,7 @@ import styles from "./Guides.module.css";
 import { useNavigate, Link } from "react-router-dom";
 import { useFetchDocuments } from "../../hooks/useFetchDocuments";
 import { useState } from "react";
+import { useCheckAdm } from "../../hooks/useCheckAdm";
 
 // components
 import GuidePostDetails from "../../components/GuidePostDetails";
@@ -13,7 +14,12 @@ import GuidePostDetails from "../../components/GuidePostDetails";
 import Button from 'react-bootstrap/Button';
 
 const Guides = () => {
-  const {documents: posts, loading} = useFetchDocuments("guide-posts");
+
+  const { adm } = useCheckAdm();
+
+  console.log(adm);
+
+  const { documents: posts, loading } = useFetchDocuments("guide-posts");
 
   const [query, setQuery] = useState("");
 
@@ -22,7 +28,7 @@ const Guides = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if(query) {
+    if (query) {
       return navigate(`/search?q=${query}`);
     };
   };
@@ -30,18 +36,25 @@ const Guides = () => {
   return (
     <div className={styles.guides}>
       <h1>Veja nossas principais guias sobre gravidez e cuidados com bebê</h1>
-      <form 
+      <form
         onSubmit={handleSubmit}
         className={styles.search_form}
       >
-        <input 
+        <input
           type="text"
           placeholder="Ou busque por tags..."
-          onChange={(e) => setQuery(e.target.value)} 
+          onChange={(e) => setQuery(e.target.value)}
         />
         <Button>
           Pesquisar
         </Button>
+        {adm &&
+          <Button className={styles.createBtn}>
+            <Link className={styles.createLink} to="/guides/posts/create">
+              Criar post
+            </Link>
+          </Button>
+        }
       </form>
       <div className={styles.guidesContainer}>
         {loading && <p>Carregando...</p>}
