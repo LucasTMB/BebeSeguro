@@ -24,7 +24,7 @@ body {
     border: none;
     outline: none; 
     box-shadow: 0 0 5px #654321;
-    transform: scale(1.05);
+    transform: scale(1.01);
 }
 
 input:focus,
