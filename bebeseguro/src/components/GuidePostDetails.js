@@ -54,7 +54,9 @@ const GuidePostDetails = ({ post }) => {
             </div>
             <Link>
                 <Button className={styles.cardButton}>
-                    Ler matéria
+                    <Link to={`/guides/posts/${post.id}`}>
+                        Ler artigo
+                    </Link>
                 </Button>
             </Link>
         </div>

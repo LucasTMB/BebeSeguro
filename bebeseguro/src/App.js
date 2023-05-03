@@ -19,6 +19,7 @@ import Home from "./pages/Home/Home";
 import Store from "./pages/Store/Store";
 import Guides from "./pages/Guides/Guides";
 import CreateGuidePost from "./pages/CreateGuidePost/CreateGuidePost";
+import GuidePost from './pages/GuidePost/GuidePost';
 import Calculators from "./pages/Calculators/Calculators";
 import Community from "./pages/Community/Community";
 import About from "./pages/About/About";
@@ -61,6 +62,10 @@ function App() {
               <Route 
                 path='/guides' 
                 element={user ? <Guides /> : <Navigate to="/login" />} 
+              />
+              <Route 
+                path='/guides/posts/:id' 
+                element={user ? <GuidePost /> : <Navigate to="/login" />} 
               />
               <Route 
                 path='/guides/posts/create' 
