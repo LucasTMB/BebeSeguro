@@ -17,8 +17,6 @@ const Guides = () => {
 
   const { adm } = useCheckAdm();
 
-  console.log(adm);
-
   const { documents: posts, loading } = useFetchDocuments("guide-posts");
 
   const [query, setQuery] = useState("");

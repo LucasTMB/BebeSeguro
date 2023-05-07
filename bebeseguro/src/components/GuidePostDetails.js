@@ -4,6 +4,10 @@ import styles from "./GuidePostDetails.module.css";
 // react router
 import { Link } from "react-router-dom";
 
+// hooks
+import { useCheckAdm } from "../hooks/useCheckAdm";
+import { useDeleteDocument } from "../hooks/useDeleteDocument";
+
 // bootstrap 
 import Button from "react-bootstrap/Button";
 
@@ -18,6 +22,8 @@ import {
 } from "react-icons/bs";
 
 const GuidePostDetails = ({ post }) => {
+
+    const { adm } = useCheckAdm();
 
     const formattedDate = format(new Date(post.createAt.toMillis()), "dd/MM/yyyy");
 
@@ -57,6 +63,21 @@ const GuidePostDetails = ({ post }) => {
                     Ler artigo
                 </Button>
             </Link>
+            {adm &&
+                <>
+                    <Link to={`/guides/posts/edit/${post.id}`}>
+                        <Button className={styles.cardButton}>
+                            Editar
+                        </Button>
+                    </Link>
+                    <Button
+                        onClick={() => deleteDocument(post.id)}
+                        variant="danger"
+                    >
+                        Excluir
+                    </Button>
+                </>
+            }
         </div>
     )
 }

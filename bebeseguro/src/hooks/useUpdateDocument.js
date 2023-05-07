@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useReducer } from "react";
 import { db } from "../firebase/config";
-import { updateDoc } from "firebase/firestore";
+import { updateDoc, doc } from "firebase/firestore";
 
 const initialState = {
     loading: null,
@@ -46,7 +46,7 @@ export const useUpdateDocument = (docCollection) => {
 
             checkCancelBeforeDispatch({
                 type: "UPDATED_DOC",
-                payload: updateDocument,
+                payload: updatedDocument,
             });
 
         } catch (error) {
