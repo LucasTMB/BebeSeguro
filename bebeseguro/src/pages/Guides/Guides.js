@@ -49,11 +49,16 @@ const Guides = () => {
           Pesquisar
         </Button>
         {adm &&
-          <Button className={styles.createBtn}>
-            <Link className={styles.createLink} to="/guides/posts/create">
+          <Link
+            className={styles.createLink}
+            to="/guides/posts/create"
+          >
+            <Button
+              className={styles.createBtn}
+            >
               Criar post
-            </Link>
-          </Button>
+            </Button>
+          </Link>
         }
       </form>
       <div className={styles.guidesContainer}>

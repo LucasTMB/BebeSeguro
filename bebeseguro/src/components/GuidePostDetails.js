@@ -52,11 +52,9 @@ const GuidePostDetails = ({ post }) => {
                     </p>
                 ))}
             </div>
-            <Link>
+            <Link to={`/guides/posts/${post.id}`}>
                 <Button className={styles.cardButton}>
-                    <Link to={`/guides/posts/${post.id}`}>
-                        Ler artigo
-                    </Link>
+                    Ler artigo
                 </Button>
             </Link>
         </div>

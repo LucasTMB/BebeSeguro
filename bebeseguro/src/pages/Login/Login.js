@@ -50,7 +50,7 @@ const Login = () => {
 
           <Form.Group className="my-4" controlId="formBasicEmail">
             <Form.Control 
-              className="form_input" 
+              className="form_lr_input" 
               type="email" 
               placeholder="Email"
               onChange={(e) => setEmail(e.target.value)}
@@ -59,7 +59,7 @@ const Login = () => {
 
           <Form.Group className="my-4" controlId="formBasicPassword">
             <Form.Control 
-              className="form_input" 
+              className="form_lr_input" 
               type="password" 
               placeholder="Senha"
               onChange={(e) => setPassword(e.target.value)}

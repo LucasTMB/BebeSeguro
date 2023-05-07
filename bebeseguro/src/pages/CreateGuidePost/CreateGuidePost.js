@@ -73,42 +73,73 @@ const CreateGuidePost = () => {
         <h2>Criar post</h2>
         <p>Escreva sobre o que quiser e compartilhe o seu conhecimento!</p>
       </div>
-      <Form onSubmit={handleSubmit}>
-        <Form.Group className="my-4" controlId="title">
-          <Form.Control
-            className="form_input"
+      <Form 
+        className="post_form" 
+        onSubmit={handleSubmit}
+      >
+        <Form.Group 
+          className="post_form_group my-3"
+        >
+          <Form.Label 
+            className="label"
+          >
+            Título:
+          </Form.Label>
+          <input
+            className="post_form_input"
             type="text"
             name="title"
-            maxLength={50}
             required
             placeholder="Pense num bom título..."
             onChange={(e) => setTitle(e.target.value)}
             value={title}
           />
         </Form.Group>
-        <Form.Group className="my-4" controlId="image">
-          <Form.Control
-            className="form_input"
+        <Form.Group 
+          className="post_form_group my-3"
+        >
+          <Form.Label 
+            className="label"
+          >
+            URL da imagem:
+          </Form.Label>
+          <input
+            className="post_form_input"
             type="text"
             name="image"
             required
-            placeholder="Insira a URL de uma imagem que representa o seu post"
+            placeholder="Insira uma imagem que representa o seu post"
             onChange={(e) => setImage(e.target.value)}
             value={image}
           />
         </Form.Group>
-        <Form.Group className="my-4" controlId="body" as="div">
-          <Editor
-            className={styles.editor}
+        <Form.Group 
+          className="post_form_group my-3"
+        >
+          <Form.Label 
+            className="label"
+          >
+            Conteúdo:
+          </Form.Label>
+          <textarea
+          className="post_form_textarea"
             name="body"
-            placeholder="Digite o seu conteúdo aqui..."
-            onEditorChange={handleEditorChange}
+            required
+            placeholder="Insira o conteúdo do post"
+            onChange={(e) => setBody(e.target.value)}
             value={body}
           />
         </Form.Group>
-        <Form.Group className="my-4" controlId="tags">
-          <Form.Control
-            className="form_input"
+        <Form.Group 
+          className="post_form_group my-3"
+        >
+          <Form.Label 
+            className="label"
+          >
+            Tags:
+          </Form.Label>
+          <input
+            className="post_form_input"
             type="text"
             name="tags"
             required
