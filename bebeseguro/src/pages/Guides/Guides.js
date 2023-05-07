@@ -27,7 +27,7 @@ const Guides = () => {
     e.preventDefault();
 
     if (query) {
-      return navigate(`/search?q=${query}`);
+      return navigate(`guides/posts/search?q=${query}`);
     };
   };
 
@@ -43,7 +43,9 @@ const Guides = () => {
           placeholder="Ou busque por tags..."
           onChange={(e) => setQuery(e.target.value)}
         />
-        <Button>
+        <Button
+          className={styles.search_button}
+        >
           Pesquisar
         </Button>
         {adm &&
@@ -53,6 +55,7 @@ const Guides = () => {
           >
             <Button
               className={styles.createBtn}
+              block
             >
               Criar post
             </Button>

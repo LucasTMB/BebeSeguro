@@ -25,6 +25,8 @@ const GuidePostDetails = ({ post }) => {
 
     const { adm } = useCheckAdm();
 
+    const { deleteDocument } = useDeleteDocument("guide-posts");
+
     const formattedDate = format(new Date(post.createAt.toMillis()), "dd/MM/yyyy");
 
     function filterTitle(title) {
@@ -71,6 +73,7 @@ const GuidePostDetails = ({ post }) => {
                         </Button>
                     </Link>
                     <Button
+                        className={styles.cardButton}
                         onClick={() => deleteDocument(post.id)}
                         variant="danger"
                     >

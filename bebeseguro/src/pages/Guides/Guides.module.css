@@ -31,22 +31,24 @@
     color: #FEFEFE;
 }
 
-.search_form Button {
+.search_button,
+.createBtn {
     background-color: #946262;
     border: none;
     border-radius: 0;
     font-weight: 600;
 }
 
-.search_form Button:hover {
+.search_button:hover,
+.createBtn:hover {
     background-color: #A97676; 
 }
 
-.createBtn {
+.createLink {
     margin-left: 0.5em;
 }
 
-.createBtn .createLink {
+.createLink {
     text-decoration: none;
     color: #FEFEFE;
 }
@@ -62,6 +64,24 @@
 
 /* Estilo para telas pequenas */
 @media only screen and (max-width: 600px) {
+    .search_form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .search_form input,
+    .search_button,
+    .createLink {
+        width: 90%;
+        margin: 0.5em 0;
+    }
+
+    .createBtn {
+        width: 100%;
+    }
+
     .guidesContainer {
         width: 100%;
         padding: 1em 0;
