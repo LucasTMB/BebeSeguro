@@ -18,6 +18,7 @@ import Footer from './components/Footer';
 import Home from "./pages/Home/Home";
 import Store from "./pages/Store/Store";
 import Guides from "./pages/Guides/Guides";
+import GuidesSearch from './pages/GuidesSearch/GuidesSearch';
 import CreateGuidePost from "./pages/CreateGuidePost/CreateGuidePost";
 import EditGuidePost from './pages/EditGuidePost/EditGuidePost';
 import GuidePost from './pages/GuidePost/GuidePost';
@@ -63,6 +64,10 @@ function App() {
               <Route 
                 path='/guides' 
                 element={user ? <Guides /> : <Navigate to="/login" />} 
+              />
+              <Route 
+                path='/guides/search'
+                element={user ? <GuidesSearch /> : <Navigate to="/login" />}
               />
               <Route 
                 path='/guides/posts/:id' 

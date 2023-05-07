@@ -25,9 +25,10 @@ const Guides = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(`query: ${query}`);
 
     if (query) {
-      return navigate(`guides/posts/search?q=${query}`);
+      return navigate(`/guides/search?q=${query}`);
     };
   };
 
@@ -44,6 +45,7 @@ const Guides = () => {
           onChange={(e) => setQuery(e.target.value)}
         />
         <Button
+        type="submit"
           className={styles.search_button}
         >
           Pesquisar

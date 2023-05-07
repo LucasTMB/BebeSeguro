@@ -4,6 +4,9 @@ import styles from "./GuidePost.module.css";
 import { useParams } from "react-router-dom";
 import { useFetchDocument } from "../../hooks/useFetchDocument";
 
+// date format
+import { format } from "date-fns";
+
 const GuidePost = () => {
     const { id } = useParams();
     const { document: post, loading } = useFetchDocument("guide-posts", id);
@@ -13,9 +16,14 @@ const GuidePost = () => {
             {loading && <p>Carregando post...</p>}
             {post && (
                 <>
-                    <h1>{post.title}</h1>
+                    <div className={styles.postHead}>
+                        <h1>{post.title}</h1>
+                        <p className={styles.createBy}>
+                            Autor(a): <span>{post.createBy}</span>
+                        </p>
+                    </div>
                     <img src={post.image} alt={post.title} />
-                    <p>{post.body}</p>
+                    <p className={styles.body}>{post.body}</p>
                     <h3>Este post trata sobre:</h3>
                     <div className={styles.tags}>
                         {post.tagsArray.map((tag) => (

@@ -88,6 +88,14 @@
     background-color: #A97676;
 }
 
+.deleteButton {
+    background-color: rgb(169, 25, 25);
+}
+
+.deleteButton:hover {
+    background-color: rgb(210, 34, 34);
+}
+
 /* Estilo para telas pequenas */
 @media (max-width: 767px) {
     .card {

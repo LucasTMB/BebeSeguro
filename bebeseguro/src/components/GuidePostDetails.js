@@ -73,7 +73,7 @@ const GuidePostDetails = ({ post }) => {
                         </Button>
                     </Link>
                     <Button
-                        className={styles.cardButton}
+                        className={`${styles.cardButton} ${styles.deleteButton}`}
                         onClick={() => deleteDocument(post.id)}
                         variant="danger"
                     >

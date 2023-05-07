@@ -1,0 +1,52 @@
+.search {
+    background-color: #D7AFAF;
+    min-height: calc(100vh - 72px);
+}
+
+.search h1,
+.noposts {
+    text-align: center;
+}
+
+.search h1 {
+    font-family: 'Roboto Slab', serif;
+    color: #FFF4F4;
+    font-size: 2em;
+    padding-top: 1em;
+}
+
+.noposts p {
+    font-size: 1.2em;
+    color: #FFF4F4;
+    font-family: 'Roboto Slab', serif;
+}
+
+.searchContainer {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    margin: 0 auto;
+    padding: 2em 0;
+    flex-wrap: wrap;
+}
+
+.btn {
+    background-color: #946262;
+    border: none;
+    border-radius: 0;
+    font-weight: 600;
+    transition: .5s all;
+}
+
+.btn:hover {
+    background-color: #A97676;
+    transform: scale(1.1);
+}
+
+/* Estilo para telas pequenas */
+@media only screen and (max-width: 600px) {
+    .searchContainer {
+        width: 100%;
+        padding: 1em 0;
+    }
+}
