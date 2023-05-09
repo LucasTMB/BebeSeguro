@@ -1,4 +1,4 @@
-import styles from './Calculators.module.css';
+import styles from "./Calculators.module.css";
 
 const Calculators = () => {
   return (

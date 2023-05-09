@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculadora Beta HCG</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <div class="container">    <h1>Calculadora de beta hCG</h1>
+        <form>
+            <label for="hcg-inicial">Informe seu nível de hCG inicial:</label>
+            <input type="number" id="hcg-inicial" name="hcg-inicial">
+            <br>
+            <label for="hcg-atual">Informe seu nível de hCG atual:</label>
+            <input type="number" id="hcg-atual" name="hcg-atual">
+            <br>
+            <label for="data-inicial">Informe a data do seu exame inicial:</label>
+            <input type="date" id="data-inicial" name="data-inicial">
+            <br>
+            <label for="data-atual">Informe a data do seu exame atual:</label>
+            <input type="date" id="data-atual" name="data-atual">
+            <br>
+            <button type="button" onclick="calcular()">Calcular</button>
+        </form>
+        <p id="resultado"></p>
+    <script src="beta.js"></script>
+  </body>
+</html>

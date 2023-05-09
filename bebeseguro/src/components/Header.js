@@ -14,62 +14,68 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
 const Header = () => {
-  const {user} = useAuthValue();
-  const {logout} = useAuthentication();
+  const { user } = useAuthValue();
+  const { logout } = useAuthentication();
 
   return (
     <Navbar bg="light" expand="lg" className={styles.navbar}>
       <Container className={styles.containerNavbar}>
-        <NavLink 
-            to="/" 
-            className={`${"navbar-brand"} ${styles.brand}`}
+        <NavLink
+          to="/"
+          className={`${"navbar-brand"} ${styles.brand}`}
         >
-            Bebe<span>Seguro</span>
+          Bebe<span>Seguro</span>
         </NavLink>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <NavLink 
-                to="/store" 
-                exact className="nav-link"
+            <NavLink
+              to="/"
+              exact className="nav-link"
             >
-                Loja
+              Home
+            </NavLink>
+            <NavLink
+              to="/store"
+              className="nav-link"
+            >
+              Loja
             </NavLink>
             {user && (
               <>
-                <NavLink 
-                    to="/guides" 
-                    className="nav-link"
+                <NavLink
+                  to="/guides"
+                  className="nav-link"
                 >
-                    Guias
+                  Guias
                 </NavLink>
                 <NavDropdown title="Calculadoras" id="basic-nav-dropdown">
-                  <NavLink to="/" className="nav-link">
-                    Calculadora de níveis de hCG
+                  <NavLink to="/calculators/hcg" className="nav-link">
+                    Níveis de hCG
                   </NavLink>
-                  <NavLink to="/" className="nav-link">
-                    Calculadora gestacional
+                  <NavLink to="/calculators/gestage" className="nav-link">
+                    Idade gestacional
                   </NavLink>
-                  <NavLink to="/" className="nav-link">
-                    Calculadora de tempo de gravidez para FIV e TEC
+                  <NavLink to="/calculators/imc" className="nav-link">
+                    IMC para gestantes
                   </NavLink>
-                  <NavLink to="/" className="nav-link">
-                    Calculadora de data de nascimento por ultrassom
+                  <NavLink to="/calculators/deliverydate" className="nav-link">
+                    Data do parto
                   </NavLink>
                 </NavDropdown>
-                <NavLink 
-                    to="/community" 
-                    className="nav-link"
+                <NavLink
+                  to="/community"
+                  className="nav-link"
                 >
-                    Comunidade
+                  Comunidade
                 </NavLink>
               </>
             )}
-            <NavLink 
-                to="/about" 
-                className="nav-link"
+            <NavLink
+              to="/about"
+              className="nav-link"
             >
-                Sobre Nós
+              Sobre Nós
             </NavLink>
             {!user && (
               <>

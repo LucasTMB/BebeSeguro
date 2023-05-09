@@ -1,0 +1,75 @@
+.container {
+    margin: auto;
+    width: 30%;
+    background-color: #BC8080;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+   color:white;
+  }
+  
+  input[type=date], input[type=number] {
+    padding: 5px;
+    margin-left: 10px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: none;
+    font-size: 18px;
+  }
+  
+  label {
+    font-size: 20px;
+    margin-right: 10px;
+  }
+  
+  input:focus {
+    outline: none;
+  }
+  
+  input[type=number]::-webkit-outer-spin-button,
+  input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+  
+  button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: none;
+    background-color: #A97676;
+    color: white;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #A97676;
+  }
+  
+  .result {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  @media screen and (max-width: 600px) {
+    input[type=date], input[type=number] {
+      width: 100%;
+      margin: 10px 0;
+    }
+  
+    label {
+      display: block;
+      margin: 10px 0;
+    }
+  
+    button {
+      width: 100%;
+    }
+  }
+  

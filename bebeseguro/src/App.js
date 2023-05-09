@@ -23,6 +23,10 @@ import CreateGuidePost from "./pages/CreateGuidePost/CreateGuidePost";
 import EditGuidePost from './pages/EditGuidePost/EditGuidePost';
 import GuidePost from './pages/GuidePost/GuidePost';
 import Calculators from "./pages/Calculators/Calculators";
+import HcgCalculator from "./pages/HcgCalculator/HcgCalculator";
+import GestAgeCalculator from "./pages/GestAgeCalculator/GestAgeCalculator";
+import ImcCalculator from "./pages/ImcCalculator/ImcCalculator";
+import DeliveryDateCalculator from './pages/DeliveryDateCalculator/DeliveryDateCalculator';
 import Community from "./pages/Community/Community";
 import About from "./pages/About/About";
 import Login from "./pages/Login/Login";
@@ -84,6 +88,22 @@ function App() {
               <Route 
                 path='/calculators' 
                 element={user ? <Calculators /> : <Navigate to="/login" />} 
+              />
+              <Route 
+                path='/calculators/hcg' 
+                element={user ? <HcgCalculator /> : <Navigate to="/login" />} 
+              />
+              <Route 
+                path='/calculators/gestage' 
+                element={user ? <GestAgeCalculator /> : <Navigate to="/login" />} 
+              />
+              <Route 
+                path='/calculators/imc' 
+                element={user ? <ImcCalculator /> : <Navigate to="/login" />} 
+              />
+              <Route 
+                path='/calculators/deliverydate' 
+                element={user ? <DeliveryDateCalculator /> : <Navigate to="/login" />} 
               />
               <Route 
                 path='/community' 

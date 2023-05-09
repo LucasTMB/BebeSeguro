@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculadora Data do Parto</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <h1>Calculadora Data do Parto</h1>
+	<div class="container">
+    <br><br>
+    <form>
+      <label for="data-ultima-menstruacao">Data da última menstruação:</label>
+      <br><br>
+      <input type="date" id="data-ultima-menstruacao">
+      <br><br>
+      <label for="ciclo-menstrual">Duração média do ciclo menstrual (em dias):</label>
+      <br><br>
+      <input type="number" id="ciclo-menstrual">
+      <br>
+      <button type="button" onclick="calcularDataParto()">Calcular data do parto</button>
+    </form>
+    <p id="resultado"></p>
+	</div>
+
+	<script type="text/javascript" src="dataParto.js"></script>
+</body>
+</html>
+
+
