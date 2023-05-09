@@ -1,0 +1,84 @@
+.banner {
+    background: linear-gradient(rgba(0, 0, 0, .10), rgba(0, 0, 0.10)100%), url(https://img.freepik.com/fotos-gratis/mae-e-menina-posando-juntos_23-2148558194.jpg?w=1380&t=st=1683590201~exp=1683590801~hmac=ae903b98eee106508fc039edffaa4642a5b2183f51bb376eff4a7c3cd83915d2);
+
+    height: calc(100vh - 72px);
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2em;
+}
+
+.banner h1,
+.banner p,
+.buttons {
+    color: #FEFEFE;
+    width: 40%;
+    text-align: center;
+}
+
+.banner h1 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 5.5em;
+}
+
+.banner p {
+    font-family: 'Indie Flower', cursive;
+    font-size: 2em;
+}
+
+.loginBtn Button,
+.registerBtn Button {
+    background-color: #946262;
+    border: none;
+    font-weight: bold;
+    padding: 0.8em 1.5em;
+    transition: 0.5s all;
+    margin: 0 0.5em;
+    width: 30%;
+}
+
+.loginBtn Button:hover,
+.registerBtn Button:hover {
+    background-color: #A97676;
+    transform: scale(1.1);
+}
+
+@media screen and (max-width: 1280px) {
+    .banner {
+        align-items: center;
+        background-position: right;
+    }
+
+    .banner h1,
+    .banner p,
+    .buttons {
+        width: 80%;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .loginBtn Button,
+    .registerBtn Button {
+        width: 50%;
+    }
+
+    .loginBtn Button {
+        margin-bottom: 0.5em;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .banner h1 {
+        font-size: 3em;
+    }
+
+    .banner p {
+        font-size: 1.5em;
+    }
+}
