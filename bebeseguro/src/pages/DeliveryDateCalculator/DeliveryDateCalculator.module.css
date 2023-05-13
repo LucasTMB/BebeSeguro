@@ -1,0 +1,63 @@
+.delivery_date {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #A97676;
+    padding: 2em 0;
+    min-height: calc(100vh - 72px);
+}
+
+.page_titles {
+    text-align: justify;
+    width: 70%;
+    margin-bottom: 0.5em;
+}
+
+.page_titles h2 {
+    font-size: 2rem;
+    color: #FFF4F4;
+    font-family: 'Roboto Slab', serif;
+}
+
+.page_titles p {
+    font-size: 1em;
+    color: #FFF4F4;
+    font-family: 'Indie Flower' cursive;
+}
+
+.calculator_form {
+    width: 70%;
+}
+
+.buttonsAndAlerts {
+    text-align: center;
+}
+
+.calculateBtn {
+    background-color: #946262;
+    border: none;
+    font-weight: bold;
+    padding: 0.8em 1.5em;
+    transition: 0.5s all;
+}
+
+.calculateBtn:hover {
+    background-color: #A97676;
+    transform: scale(1.1);
+}
+
+.alert {
+    margin: 1em 0;
+}
+
+@media only screen and (max-width: 600px) {
+    .page_titles h2 {
+        text-align: center;
+    }
+
+    .page_titles,
+    .calculator_form {
+        width: 90%;
+    }
+}

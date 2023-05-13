@@ -4,7 +4,8 @@ body {
     margin: 0;
 }
 
-.form_lr_input {
+.form_lr_input,
+.calculator_form_input {
     background-color: #D7AFAF;
     color: #FFF4F4;
     font-weight: 600;
@@ -26,12 +27,16 @@ body {
     transform: scale(1.01);
 }
 
-.post_form {
-    width: 80%;
+.post_form,
+.calculator_form {
     padding: 2em;
     background-color: #BC8080;
     border-radius: 20px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.post_form {
+    width: 80%;
 }
 
 .post_form_group {
