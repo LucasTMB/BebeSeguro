@@ -1,0 +1,26 @@
+.aboutPage {
+    background-color: #D7AFAF;
+    min-height: calc(100vh - 72px);
+    font-family: 'Roboto Slab', serif;
+}
+
+.aboutPage h1 {
+    font-size: 6em;
+	color: #A97676;
+    padding: 30px;
+	text-align: center;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 30px;
+    border-top: 3px dashed #A97676;
+    width: 70%;
+}
+
+.aboutUs {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    width: 80%;
+}
