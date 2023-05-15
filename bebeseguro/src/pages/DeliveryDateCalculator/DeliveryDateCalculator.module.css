@@ -8,24 +8,6 @@
     min-height: calc(100vh - 72px);
 }
 
-.page_titles {
-    text-align: justify;
-    width: 70%;
-    margin-bottom: 0.5em;
-}
-
-.page_titles h2 {
-    font-size: 2rem;
-    color: #FFF4F4;
-    font-family: 'Roboto Slab', serif;
-}
-
-.page_titles p {
-    font-size: 1em;
-    color: #FFF4F4;
-    font-family: 'Indie Flower' cursive;
-}
-
 .calculator_form {
     width: 70%;
 }

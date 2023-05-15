@@ -28,13 +28,13 @@ const DeliveryDateCalculator = () => {
 
     return (
         <div className={styles.delivery_date}>
-            <div className={styles.page_titles}>
+            <div className={`${styles.page_titles} page_titles`}>
                 <h2>Calculadora da data do parto</h2>
                 <p>
                     Você acabou de receber um resultado positivo no teste de gravidez e agora tem muitas perguntas, tipo "como calcular quantas semanas de gravidez tenho?", "quando é a data prevista para o parto?" e "qual é a melhor ferramenta de cálculo gestacional?". Se você quiser planejar a data de sua gravidez antes de começar a tentar, nossa calculadora da data do parto pode ajudar. Usando a data da última menstruação, ela pode calcular sua gravidez e, com base na data prevista para o parto, estimar a data da concepção.
                 </p>
             </div>
-            <Form 
+            <Form
                 className={`${styles.calculator_form} calculator_form`}
                 onSubmit={handleSubmit}
             >
