@@ -6,9 +6,9 @@
 
 .aboutPage h1 {
     font-size: 6em;
-	color: #A97676;
+    color: #A97676;
     padding: 30px;
-	text-align: center;
+    text-align: center;
 }
 
 .container {
@@ -18,9 +18,82 @@
     width: 70%;
 }
 
-.aboutUs {
+.container section {
+    margin: 1em auto;
+}
+
+.aboutUs,
+.vision {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
     margin: 0 auto;
     width: 80%;
+}
+
+.mission,
+.values {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.aboutUs .texts,
+.mission .texts,
+.vision .texts,
+.values .texts {
+    width: 60%;
+    text-align: justify;
+}
+
+.aboutUs .texts p,
+.mission .texts p,
+.vision .texts p,
+.values .texts p {
+    font-size: 1.2em;
+}
+
+.aboutUs img,
+.mission img,
+.vision img,
+.values img {
+    width: 30%;
+}
+
+@media only screen and (max-width: 1000px) {
+
+    .aboutPage h1 {
+        font-size: 3em;
+    }
+
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .aboutUs,
+    .mission,
+    .vision,
+    .values {
+        flex-direction: column-reverse;
+        width: 95%;
+    }
+
+    .aboutUs .texts,
+    .mission .texts,
+    .vision .texts,
+    .values .texts {
+        width: 100%;
+    }
+
+    .aboutUs img,
+    .mission img,
+    .vision img,
+    .values img {
+        width: 40%;
+        padding-bottom: 1em;
+    }
 }

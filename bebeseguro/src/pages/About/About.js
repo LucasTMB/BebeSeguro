@@ -11,7 +11,7 @@ const About = () => {
       <h1>BebeSeguro</h1>
       <div className={styles.container}>
         <section className={styles.aboutUs}>
-          <div>
+          <div className={styles.texts}>
             <h2>SOBRE NÓS</h2>
             <p>
               Nós somos um website dedicado a apoiar mães em cada etapa da sua jornada, desde a gravidez até a criação de seus filhos. Nós oferecemos uma ampla gama de recursos, desde calculadoras úteis até uma comunidade de mães ativa e engajada.
@@ -20,7 +20,7 @@ const About = () => {
           <img src={Mom} alt="Figura de uma mãe com filho no colo" />
         </section>
         <section className={styles.mission}>
-          <div>
+          <div className={styles.texts}>
             <h2>MISSÃO</h2>
             <p>
               Nossa missão é fornecer às mães o suporte necessário para enfrentar os desafios da maternidade. Queremos ser uma fonte confiável de informações e recursos, além de fornecer um espaço seguro para as mães se conectarem e compartilharem suas experiências.
@@ -29,7 +29,7 @@ const About = () => {
           <img src={Rocket} alt="Figura de um foguete" />
         </section>
         <section className={styles.vision}>
-          <div>
+          <div className={styles.texts}>
             <h2>VISÃO</h2>
             <p>
               Nossa visão é criar uma comunidade online ativa e inclusiva de mães, que apoiam umas às outras em cada etapa da jornada da maternidade. Queremos ser a primeira escolha para mães que procuram informações e recursos confiáveis para apoiar sua jornada como mães.
@@ -38,7 +38,7 @@ const About = () => {
           <img src={Lamp} alt="Figura de um lâmpada" />
         </section>
         <section className={styles.values}>
-          <div>
+          <div className={styles.texts}>
             <h2>VALORES</h2>
             <ul>
               <li>
