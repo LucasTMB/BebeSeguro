@@ -42,17 +42,17 @@ export const imcCalculator = (weight, height, weeks) => {
     let maxImc;
 
     if (weeksValue < 13) {
-        minImc = 12.2;
-        maxImc = 16.1;
+        minImc = 20;
+        maxImc = 25.4;
     } else if (weeksValue >= 13 && weeksValue < 27) {
-        minImc = 11.0;
-        maxImc = 15.6;
-    } else if (weeksValue >= 27 && weeksValue < 40) {
-        minImc = 10.4;
-        maxImc = 14.4;
+        minImc = 20.7;
+        maxImc = 27.2;
+    } else if (weeksValue >= 27 && weeksValue < 42) {
+        minImc = 22.8;
+        maxImc = 29.2;
     } else {
-        minImc = 10.0;
-        maxImc = 13.3;
+        minImc = 29.3;
+        maxImc = 33.3;
     }
 
     // Verificar se o IMC está dentro do intervalo addequado e exibir o resultado
