@@ -50,8 +50,8 @@ const Header = () => {
                   Guias
                 </NavLink>
                 <NavDropdown title="Calculadoras" id="basic-nav-dropdown">
-                  <NavLink to="/calculators/hcg" className="nav-link">
-                    Níveis de hCG
+                  <NavLink to="/calculators/ovulation" className="nav-link">
+                    Período fértil
                   </NavLink>
                   <NavLink to="/calculators/gestage" className="nav-link">
                     Idade gestacional

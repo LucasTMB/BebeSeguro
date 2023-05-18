@@ -23,7 +23,7 @@ import CreateGuidePost from "./pages/CreateGuidePost/CreateGuidePost";
 import EditGuidePost from './pages/EditGuidePost/EditGuidePost';
 import GuidePost from './pages/GuidePost/GuidePost';
 import Calculators from "./pages/Calculators/Calculators";
-import HcgCalculator from "./pages/HcgCalculator/HcgCalculator";
+import OvulationCalculator from "./pages/OvulationCalculator/OvulationCalculator";
 import GestAgeCalculator from "./pages/GestAgeCalculator/GestAgeCalculator";
 import ImcCalculator from "./pages/ImcCalculator/ImcCalculator";
 import DeliveryDateCalculator from './pages/DeliveryDateCalculator/DeliveryDateCalculator';
@@ -90,8 +90,8 @@ function App() {
                 element={user ? <Calculators /> : <Navigate to="/login" />} 
               />
               <Route 
-                path='/calculators/hcg' 
-                element={user ? <HcgCalculator /> : <Navigate to="/login" />} 
+                path='/calculators/ovulation' 
+                element={user ? <OvulationCalculator /> : <Navigate to="/login" />} 
               />
               <Route 
                 path='/calculators/gestage' 

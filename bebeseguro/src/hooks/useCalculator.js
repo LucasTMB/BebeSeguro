@@ -81,30 +81,25 @@ export const gestAgeCalculator = (dm, tdy) => {
 
 };
 
-export const hcgCalculator = (initialHcg, currentHcg, iniDate, curDate) => {
-    // Obter valores dos campos
-    const initialDate = new Date(iniDate);
-    const currentDate = new Date(curDate);
+export const fertilePeriodCalculator = (durationInput, dateInput) => {
+    
+    const duration = parseInt(durationInput);
+    const date = new Date(dateInput);
 
-    // Calcular diferença entre níveis de hCG
-    const diff = currentHcg - initialHcg;
+    const ovulation = new Date(date.getTime() + (duration - 14) * 24 * 60 * 60 * 1000);
 
-    // Calcular tempo de duplicação
-    const days = (currentDate - initialDate) / (24 * 60 * 60 * 1000);
-    const doublingTime = Math.log(2) / (Math.log(currentHcg / initialHcg) / days);
+    var fertileBeginning = new Date(ovulation.getTime() - 3 * 24 * 60 * 60 * 1000);
+    var fertileEnding = new Date(ovulation.getTime() + 3 * 24 * 60 * 60 * 1000);
 
-    // Calcular aumento de um dia
-    const raiseOneDay = currentHcg + diff;
-    const raiseOneDayPercentage = ((raiseOneDay - currentHcg) / currentHcg) * 100;
+    // Opções de formatação das datas
+    const options = { weekday: 'long', day: '2-digit', month: '2-digit', year: 'numeric' };
+    const formatter = new Intl.DateTimeFormat('pt-BR', options);
 
-    // Calcular aumento de dois dias
-    const raiseTwoDays = currentHcg + (2 * diff);
-    const raiseTwoDaysPercentage = ((raiseTwoDays - currentHcg) / currentHcg) * 100;
+    // Formatação das datas
+    const formattedFertileBeginning = formatter.format(fertileBeginning);
+    const formattedFertileEnding = formatter.format(fertileEnding);
 
-    const resultDiff = `A diferença entre os níveis de hCG inicial e atual é: ${diff}.`;
-    const resultDoublingTime = `O tempo de duplicação estimado é: ${doublingTime.toFixed(2)} dias.`
-    const resultRaiseOneDay = `O aumento de um dia estimado é: ${raiseOneDay} (${raiseOneDayPercentage.toFixed(2)}%).`;
-    const resultRaiseTwoDays = `O aumento de dois dias estimado é: ${raiseTwoDays} (${raiseTwoDaysPercentage}).`;
+    const result = `Seu período fértil é entre ${formattedFertileBeginning} e ${formattedFertileEnding}.`;
 
-    return { resultDiff, resultDoublingTime, resultRaiseOneDay, resultRaiseTwoDays };
+    return result;
 };
