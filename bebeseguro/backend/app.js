@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
 
 // Upload directory
-app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
+app.use('/uploads', express.static('uploads'));
 
 // db connection
 require("./config/db.js");
@@ -27,7 +27,7 @@ app.get("/", (req, res) => {
 });
 
 // routes
-const router = require("./routes/router.js");
+const router = require("./routes/Router.js");
 
 app.use(router);
 

@@ -30,6 +30,7 @@ import ImcCalculator from "./pages/ImcCalculator/ImcCalculator";
 import DeliveryDateCalculator from './pages/DeliveryDateCalculator/DeliveryDateCalculator';
 import Community from "./pages/Community/Community";
 import About from "./pages/About/About";
+import EditProfile from './pages/EditProfile/EditProfile';
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import NotFound from './pages/NotFound/NotFound';
@@ -120,6 +121,10 @@ function App() {
             <Route
               path='/about'
               element={<About />}
+            />
+            <Route
+              path='/profile'
+              element={auth ? <EditProfile /> : <Navigate to="/login" />}
             />
             <Route
               path='/login'

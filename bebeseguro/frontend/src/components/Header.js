@@ -12,7 +12,7 @@ import { useDispatch, useSelector } from "react-redux";
 import styles from "./Header.module.css";
 
 // redux
-import {logout, reset} from "../slices/authSlice";
+import { logout, reset } from "../slices/authSlice";
 
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -28,7 +28,7 @@ const Header = () => {
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
-  
+
   const handleLogout = () => {
     dispatch(logout());
     dispatch(reset());
@@ -113,7 +113,15 @@ const Header = () => {
               </>
             )}
             {auth && (
-              <button onClick={handleLogout}>Sair</button>
+              <>
+                <NavLink
+                  to="/profile"
+                  className="nav-link"
+                >
+                  Editar perfil
+                </NavLink>
+                <button onClick={handleLogout}>Sair</button>
+              </>
             )}
           </Nav>
         </Navbar.Collapse>

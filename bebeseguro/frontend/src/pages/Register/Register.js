@@ -73,7 +73,7 @@ const Register = () => {
       </div>
       <div className={styles.form}>
         <Form onSubmit={handleSubmit}>
-          <Form.Group className="my-4" controlId="formBasicEmail">
+          <Form.Group className="my-4">
             <Form.Control 
               className="form_lr_input" 
               type="text"
@@ -83,7 +83,7 @@ const Register = () => {
             />
           </Form.Group>
 
-          <Form.Group className="my-4" controlId="formBasicEmail">
+          <Form.Group className="my-4">
             <Form.Control 
               className="form_lr_input" 
               type="email"
@@ -93,7 +93,7 @@ const Register = () => {
             />
           </Form.Group>
 
-          <Form.Group className="my-4" controlId="formBasicPassword">
+          <Form.Group className="my-4">
             <Form.Control 
               className="form_lr_input" 
               type="password" 
@@ -103,7 +103,7 @@ const Register = () => {
             />
           </Form.Group>
 
-          <Form.Group className="my-4" controlId="formBasicPassword">
+          <Form.Group className="my-4">
             <Form.Control 
               className="form_lr_input" 
               type="password" 
