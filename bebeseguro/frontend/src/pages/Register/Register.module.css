@@ -61,10 +61,6 @@
     transform: scale(1.1);
 }
 
-.alert {
-    margin-top: 1em;
-}
-
 @media screen and (max-width: 991px) {
     .register {
         min-height: calc(100vh - 92px);

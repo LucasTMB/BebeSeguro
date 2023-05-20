@@ -1,12 +1,18 @@
 // hooks
-import { NavLink } from "react-router-dom";
-import { useAuthentication } from "../hooks/useAuthentication";
+import { NavLink, useNavigate } from "react-router-dom";
+//import { useAuthentication } from "../hooks/useAuthentication";
+import { useState } from "react";
+import { useAuth } from "../hooks/useAuth";
+import { useDispatch, useSelector } from "react-redux";
 
 // context
-import { useAuthValue } from "../context/AuthContext";
+//import { useAuthValue } from "../context/AuthContext";
 
 // styles
 import styles from "./Header.module.css";
+
+// redux
+import {logout, reset} from "../slices/authSlice";
 
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -14,8 +20,21 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
 const Header = () => {
-  const { user } = useAuthValue();
-  const { logout } = useAuthentication();
+  //const { user } = useAuthValue();
+  //const { logout } = useAuthentication();
+  const { auth } = useAuth();
+  const { user } = useSelector((state) => state.auth);
+
+  const navigate = useNavigate();
+
+  const dispatch = useDispatch();
+  
+  const handleLogout = () => {
+    dispatch(logout());
+    dispatch(reset());
+
+    navigate("/login");
+  }
 
   return (
     <Navbar bg="light" expand="lg" className={styles.navbar}>
@@ -41,7 +60,7 @@ const Header = () => {
             >
               Loja
             </NavLink>
-            {user && (
+            {auth && (
               <>
                 <NavLink
                   to="/guides"
@@ -77,7 +96,7 @@ const Header = () => {
             >
               Sobre Nós
             </NavLink>
-            {!user && (
+            {!auth && (
               <>
                 <NavLink
                   to="/login"
@@ -93,8 +112,8 @@ const Header = () => {
                 </NavLink>
               </>
             )}
-            {user && (
-              <button onClick={logout}>Sair</button>
+            {auth && (
+              <button onClick={handleLogout}>Sair</button>
             )}
           </Nav>
         </Navbar.Collapse>

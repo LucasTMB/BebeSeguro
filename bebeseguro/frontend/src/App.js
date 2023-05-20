@@ -5,7 +5,8 @@ import { onAuthStateChanged } from 'firebase/auth';
 
 // hooks
 import { useState, useEffect } from 'react';
-import { useAuthentication } from "./hooks/useAuthentication";
+//import { useAuthentication } from "./hooks/useAuthentication";
+import { useAuth } from "../src/hooks/useAuth";
 
 // context
 import { AuthProvider } from "./context/AuthContext";
@@ -35,6 +36,7 @@ import NotFound from './pages/NotFound/NotFound';
 
 function App() {
 
+  /*
   const [user, setUser] = useState(undefined);
   const {auth} = useAuthentication();
 
@@ -49,87 +51,92 @@ function App() {
   if (loadingUser) {
     return <p>Carregando...</p>
   }
+  */
+
+  const { auth, loading } = useAuth();
+
+  if (loading) {
+    return <p>Carregando...</p>
+  }
 
   return (
     <div className="App">
-      <AuthProvider value={{user}}>
-        <BrowserRouter>
-          <Header />
-          <div className='containerApp'>
-            <Routes>
-              <Route 
-                path='/' 
-                element={<Home />} 
-              />
-              <Route 
-                path='/store' 
-                element={<Store />} 
-              />
-              <Route 
-                path='/guides' 
-                element={user ? <Guides /> : <Navigate to="/login" />} 
-              />
-              <Route 
-                path='/guides/search'
-                element={user ? <GuidesSearch /> : <Navigate to="/login" />}
-              />
-              <Route 
-                path='/guides/posts/:id' 
-                element={user ? <GuidePost /> : <Navigate to="/login" />} 
-              />
-              <Route 
-                path='/guides/posts/create' 
-                element={user ? <CreateGuidePost /> : <Navigate to="/login" />} 
-              />
-              <Route 
-                path='/guides/posts/edit/:id' 
-                element={user ? <EditGuidePost /> : <Navigate to="/login" />} 
-              />
-              <Route 
-                path='/calculators' 
-                element={user ? <Calculators /> : <Navigate to="/login" />} 
-              />
-              <Route 
-                path='/calculators/ovulation' 
-                element={user ? <OvulationCalculator /> : <Navigate to="/login" />} 
-              />
-              <Route 
-                path='/calculators/gestage' 
-                element={user ? <GestAgeCalculator /> : <Navigate to="/login" />} 
-              />
-              <Route 
-                path='/calculators/imc' 
-                element={user ? <ImcCalculator /> : <Navigate to="/login" />} 
-              />
-              <Route 
-                path='/calculators/deliverydate' 
-                element={user ? <DeliveryDateCalculator /> : <Navigate to="/login" />} 
-              />
-              <Route 
-                path='/community' 
-                element={user ? <Community /> : <Navigate to="/login" />} 
-              />
-              <Route 
-                path='/about' 
-                element={<About />} 
-              />
-              <Route 
-                path='/login' 
-                element={!user ? <Login /> : <Navigate to="/" />} 
-              />
-              <Route 
-                path='/register' 
-                element={!user ? <Register /> : <Navigate to="/" />} 
-              />
-              <Route 
-                path='*'
-                element={<NotFound />}
-              />
-            </Routes>
-          </div>
-          <Footer />
-        </BrowserRouter>
-      </AuthProvider>
+      <BrowserRouter>
+        <Header />
+        <div className='containerApp'>
+          <Routes>
+            <Route
+              path='/'
+              element={<Home />}
+            />
+            <Route
+              path='/store'
+              element={<Store />}
+            />
+            <Route
+              path='/guides'
+              element={auth ? <Guides /> : <Navigate to="/login" />}
+            />
+            <Route
+              path='/guides/search'
+              element={auth ? <GuidesSearch /> : <Navigate to="/login" />}
+            />
+            <Route
+              path='/guides/posts/:id'
+              element={auth ? <GuidePost /> : <Navigate to="/login" />}
+            />
+            <Route
+              path='/guides/posts/create'
+              element={auth ? <CreateGuidePost /> : <Navigate to="/login" />}
+            />
+            <Route
+              path='/guides/posts/edit/:id'
+              element={auth ? <EditGuidePost /> : <Navigate to="/login" />}
+            />
+            <Route
+              path='/calculators'
+              element={auth ? <Calculators /> : <Navigate to="/login" />}
+            />
+            <Route
+              path='/calculators/ovulation'
+              element={auth ? <OvulationCalculator /> : <Navigate to="/login" />}
+            />
+            <Route
+              path='/calculators/gestage'
+              element={auth ? <GestAgeCalculator /> : <Navigate to="/login" />}
+            />
+            <Route
+              path='/calculators/imc'
+              element={auth ? <ImcCalculator /> : <Navigate to="/login" />}
+            />
+            <Route
+              path='/calculators/deliverydate'
+              element={auth ? <DeliveryDateCalculator /> : <Navigate to="/login" />}
+            />
+            <Route
+              path='/community'
+              element={auth ? <Community /> : <Navigate to="/login" />}
+            />
+            <Route
+              path='/about'
+              element={<About />}
+            />
+            <Route
+              path='/login'
+              element={!auth ? <Login /> : <Navigate to="/" />}
+            />
+            <Route
+              path='/register'
+              element={!auth ? <Register /> : <Navigate to="/" />}
+            />
+            <Route
+              path='*'
+              element={<NotFound />}
+            />
+          </Routes>
+        </div>
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 }

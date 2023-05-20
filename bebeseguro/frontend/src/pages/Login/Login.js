@@ -1,39 +1,59 @@
-import { NavLink } from "react-router-dom";
 import styles from "./Login.module.css";
 
-import { useAuthentication } from "../../hooks/useAuthentication";
-
+// hooks
+//import { useAuthentication } from "../../hooks/useAuthentication";
 import { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 
+// redux
+import { login, reset } from "../../slices/authSlice";
+
+// react router
+import { NavLink } from "react-router-dom";
+
+// components
+import Message from "../../components/Message";
+
+// bootstrap
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import Alert from 'react-bootstrap/Alert';
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
 
-  const {login, error: authError, loading} = useAuthentication();
+  const dispatch = useDispatch();
+
+  const {loading, error} = useSelector((state) => state.auth);
+  //const [error, setError] = useState("");
+  //const {login, error: authError, loading} = useAuthentication();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    setError("");
+    //setError("");
 
     const user = {
       email,
       password
     };
 
-    const res = await login(user);
+    //const res = await login(user);
 
-    console.log(res);
+    console.log(user);
+
+    dispatch(login(user));
   }
 
   useEffect(() => {
+    dispatch(reset());
+  }, [dispatch]);
+
+  /*
+  useEffect(() => {
     if(authError) setError(authError);
   }, [authError]);
+  */
 
   return (
     <div className={styles.login}>
@@ -86,7 +106,7 @@ const Login = () => {
             }
           </>
 
-          {error && <Alert className={styles.alert} variant="danger">{error}</Alert>}
+          {error && <Message msg={error} type="danger" />}
 
         </Form>
       </div>

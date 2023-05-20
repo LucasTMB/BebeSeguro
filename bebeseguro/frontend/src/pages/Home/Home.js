@@ -6,7 +6,8 @@ import { onAuthStateChanged } from 'firebase/auth';
 
 // hooks
 import { Link } from "react-router-dom";
-import { useAuthentication } from "../../hooks/useAuthentication";
+//import { useAuthentication } from "../../hooks/useAuthentication";
+import { useAuth } from "../../hooks/useAuth";
 import { useState, useEffect } from "react";
 
 // components
@@ -14,9 +15,16 @@ import HomeWithoutLogin from "../../components/HomeWithoutLogin";
 
 const Home = () => {
 
-  const [user, setUser] = useState(undefined);
-  const { auth } = useAuthentication();
+  const {auth, loading} = useAuth();
 
+  if (loading) {
+    return <p>Carregando...</p>
+  }
+
+  //const [user, setUser] = useState(undefined);
+  //const { auth } = useAuthentication();
+
+  /*
   const loadingUser = user === undefined;
 
   useEffect(() => {
@@ -28,10 +36,11 @@ const Home = () => {
   if (loadingUser) {
     return <p>Carregando...</p>
   }
+  */
 
   return (
     <main>
-      {!user && (
+      {!auth && (
         <HomeWithoutLogin />
       )}
     </main>
