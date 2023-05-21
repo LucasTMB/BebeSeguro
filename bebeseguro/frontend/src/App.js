@@ -29,6 +29,7 @@ import GestAgeCalculator from "./pages/GestAgeCalculator/GestAgeCalculator";
 import ImcCalculator from "./pages/ImcCalculator/ImcCalculator";
 import DeliveryDateCalculator from './pages/DeliveryDateCalculator/DeliveryDateCalculator';
 import Community from "./pages/Community/Community";
+import PhotosSearch from './pages/PhotosSearch/PhotosSearch';
 import About from "./pages/About/About";
 import EditProfile from './pages/EditProfile/EditProfile';
 import Profile from './pages/Profile/Profile';
@@ -119,6 +120,10 @@ function App() {
             <Route
               path='/community'
               element={auth ? <Community /> : <Navigate to="/login" />}
+            />
+            <Route
+              path='/community/search'
+              element={auth ? <PhotosSearch /> : <Navigate to="/login" />}
             />
             <Route
               path='/about'
