@@ -40,7 +40,7 @@ body {
     background-color: #D7AFAF;
     color: #FFF4F4;
     border: none;
-    outline: none; 
+    outline: none;
     box-shadow: 0 0 5px #654321;
     transform: scale(1.01);
 }
@@ -50,7 +50,7 @@ body {
     padding: 2em;
     background-color: #BC8080;
     border-radius: 20px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .post_form {
@@ -95,6 +95,10 @@ textarea::placeholder {
 
 Button[disabled] {
     background-color: #AAA;
+}
+
+.hide {
+    display: none;
 }
 
 /*

@@ -115,6 +115,12 @@ const Header = () => {
             {auth && (
               <>
                 <NavLink
+                  to={`/users/${user._id}`}
+                  className="nav-link"
+                >
+                  Perfil
+                </NavLink>
+                <NavLink
                   to="/profile"
                   className="nav-link"
                 >

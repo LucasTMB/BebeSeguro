@@ -31,6 +31,7 @@ import DeliveryDateCalculator from './pages/DeliveryDateCalculator/DeliveryDateC
 import Community from "./pages/Community/Community";
 import About from "./pages/About/About";
 import EditProfile from './pages/EditProfile/EditProfile';
+import Profile from './pages/Profile/Profile';
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import NotFound from './pages/NotFound/NotFound';
@@ -125,6 +126,10 @@ function App() {
             <Route
               path='/profile'
               element={auth ? <EditProfile /> : <Navigate to="/login" />}
+            />
+            <Route
+              path='/users/:id'
+              element={auth ? <Profile /> : <Navigate to="/login" />}
             />
             <Route
               path='/login'
