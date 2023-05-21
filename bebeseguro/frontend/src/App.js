@@ -34,6 +34,7 @@ import EditProfile from './pages/EditProfile/EditProfile';
 import Profile from './pages/Profile/Profile';
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
+import Photo from './pages/Photo/Photo';
 import NotFound from './pages/NotFound/NotFound';
 
 function App() {
@@ -138,6 +139,10 @@ function App() {
             <Route
               path='/register'
               element={!auth ? <Register /> : <Navigate to="/" />}
+            />
+            <Route
+              path='/photos/:id'
+              element={auth ? <Photo /> : <Navigate to="/login" />}
             />
             <Route
               path='*'

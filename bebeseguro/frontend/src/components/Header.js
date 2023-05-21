@@ -112,7 +112,7 @@ const Header = () => {
                 </NavLink>
               </>
             )}
-            {auth && (
+            {auth && user && (
               <>
                 <NavLink
                   to={`/users/${user._id}`}
