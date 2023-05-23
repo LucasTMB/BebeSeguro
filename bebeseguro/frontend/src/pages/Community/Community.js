@@ -41,7 +41,7 @@ const Community = () => {
   const handleSearch = (e) => {
     e.preventDefault();
 
-    if(query) {
+    if (query) {
       return navigate(`/community/search?q=${query}`);
     }
   }
@@ -68,22 +68,28 @@ const Community = () => {
           Pesquisar
         </Button>
       </form>
-      {photos &&
-        photos.map((photo) => (
-          <div key={photo._id}>
-            <PhotoItem photo={photo} />
-            <LikeContainer photo={photo} user={user} handleLike={handleLike} />
-            <Link className={styles.btn} to={`/photos/${photo._id}`}>
-              Ver mais
-            </Link>
-          </div>
-        ))}
-      {photos && photos.length === 0 && (
-        <h2 className={styles.no_photos}>
-          Ainda não há fotos publicadas,{" "}
-          <Link to={`/users/${user.userId}`}>clique aqui</Link> para começar.
-        </h2>
-      )}
+      <div className={styles.container}>
+        {photos &&
+          photos.map((photo) => (
+            <div key={photo._id}>
+              <PhotoItem photo={photo} />
+              <LikeContainer photo={photo} user={user} handleLike={handleLike} />
+              <Link className={styles.seeMoreLink} to={`/photos/${photo._id}`}>
+                <Button
+                  className={styles.seeMoreBtn}
+                >
+                  Ver mais
+                </Button>
+              </Link>
+            </div>
+          ))}
+        {photos && photos.length === 0 && (
+          <h2 className={styles.no_photos}>
+            Ainda não há fotos publicadas,{" "}
+            <Link to={`/users/${user.userId}`}>clique aqui</Link> para começar.
+          </h2>
+        )}
+      </div>
     </div>
   )
 }

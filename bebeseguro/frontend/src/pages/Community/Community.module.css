@@ -1,7 +1,41 @@
 .community {
+    background-color: #D7AFAF;
+    min-height: calc(100vh - 72px);
+}
+
+.container {
     width: 50%;
     margin: 0 auto;
-    padding-top: 2em;
+    padding: 1.5em 0;
+}
+
+.search_form {
+    text-align: center;
+    padding: 1em;
+}
+
+.search_form input {
+    box-sizing: border-box;
+    border: none;
+    color: #FEFEFE;
+    border-bottom: 1px solid #FEFEFE;
+    padding: .5em 0;
+    background-color: transparent;
+    width: 50%;
+    margin-right: 10px;
+}
+
+.search_button,
+.seeMoreBtn {
+    background-color: #946262;
+    border: none;
+    border-radius: 0;
+    font-weight: 600;
+}
+
+.search_button:hover,
+.seeMoreBtn:hover {
+    background-color: #A97676;
 }
 
 .community .btn {
