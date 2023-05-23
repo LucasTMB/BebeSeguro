@@ -1,22 +1,32 @@
-const mongoose = require("mongoose");
-const { Schema } = mongoose;
+const mongoose = require('mongoose');
 
-const guideSchema = new Schema(
-  {
-    title: String,
-    image: String,
-    content: String,
-    tags: [String],
-    author: {
-      type: Schema.Types.ObjectId,
-      ref: "User",
-    },
+const guideSchema = new mongoose.Schema({
+  photo: {
+    type: String,
+    required: true,
   },
-  {
-    timestamps: true,
-  }
-);
+  title: {
+    type: String,
+    required: true,
+  },
+  body: {
+    type: String,
+    required: true,
+  },
+  tags: {
+    type: [String],
+    required: true,
+  },
+  author: {
+    type: String,
+    required: true,
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+});
 
-const Guide = mongoose.model("Guide", guideSchema);
+const Guide = mongoose.model('Guide', guideSchema);
 
 module.exports = Guide;
