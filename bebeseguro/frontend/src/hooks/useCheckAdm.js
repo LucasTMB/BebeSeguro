@@ -18,15 +18,15 @@ export const useCheckAdm = () => {
 
             if (user._id === '646944ec075c491e26066819')
                 setAdm(true);
-            else if (user.uid === '4cXDOK9fDWSc4xFcmIXePNCt25m2')
+            else if (user._id === '64715ad54f4f668289d23847')
                 setAdm(true);
-            else if (user.uid === 'S0ssykAo4PM7XOxpnH16QTEJ7na2')
+            else if (user._id === '64715d034f4f668289d23864')
                 setAdm(true);
-            else if (user.uid === '7M6LUwVXckemGHbOXWz1gy8aG783')
+            else if (user._id === '64715f804f4f668289d2386c')
                 setAdm(true);
-            else if (user.uid === 'aCA8xmDvpdhffoT5KbNuyctliFm2')
+            else if (user._id === '64715fef4f4f668289d23871')
                 setAdm(true);
-            else if (user.uid === 'dNnRGYY20ydaKq3OhDIVgEvqeLf1')
+            else if (user._id === '647160384f4f668289d2387a')
                 setAdm(true);
             else
                 setAdm(false);
