@@ -60,7 +60,7 @@ const Header = () => {
             >
               Loja
             </NavLink>
-            {auth && (
+            {auth && user && (
               <>
                 <NavLink
                   to="/guides"

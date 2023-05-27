@@ -1,8 +1,14 @@
 import { useState, useEffect } from "react";
-import { useAuthValue } from "../context/AuthContext";
+import { useAuth } from "../hooks/useAuth";
+import { useSelector, useDispatch } from "react-redux";
+//import { useAuthValue } from "../context/AuthContext";
 
 export const useCheckAdm = () => {
-    const { user } = useAuthValue();
+    //const { user } = useAuthValue();
+    const { auth } = useAuth();
+    const { user } = useSelector((state) => state.auth);
+
+    //console.log(user._id)
 
     const [adm, setAdm] = useState(false);
 
@@ -10,7 +16,7 @@ export const useCheckAdm = () => {
 
         const checkingAdm = () => {
 
-            if (user.uid === 'k9PU6PoBElXuyp8Mq2pqpgnYW9L2')
+            if (user._id === '646944ec075c491e26066819')
                 setAdm(true);
             else if (user.uid === '4cXDOK9fDWSc4xFcmIXePNCt25m2')
                 setAdm(true);
@@ -29,5 +35,5 @@ export const useCheckAdm = () => {
         checkingAdm();
     }, [user]);
 
-    return { adm };
+    return { adm, user };
 }

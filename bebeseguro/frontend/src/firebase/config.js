@@ -1,19 +1,16 @@
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDydOxa_KeuNVxuI0BB6aqofeqUp0lxnw8",
-  authDomain: "bebeseguro-3e68a.firebaseapp.com",
-  projectId: "bebeseguro-3e68a",
-  storageBucket: "bebeseguro-3e68a.appspot.com",
-  messagingSenderId: "1068990393810",
-  appId: "1:1068990393810:web:6aecc6afa8020d5b266c0b",
-  measurementId: "G-WF1B3CLF1M"
+  apiKey: "AIzaSyDx3bbk2xxJUTugPnkKRuj1hwk-uRmiS_k",
+  authDomain: "bbseguro-7d1ec.firebaseapp.com",
+  projectId: "bbseguro-7d1ec",
+  storageBucket: "bbseguro-7d1ec.appspot.com",
+  messagingSenderId: "429072190872",
+  appId: "1:429072190872:web:707082f290dc4e4768efed"
 };
 
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 const db = getFirestore(app);
 
 export {db};

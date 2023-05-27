@@ -23,7 +23,7 @@ import {
 
 const GuidePostDetails = ({ post }) => {
 
-    const { adm } = useCheckAdm();
+    const { adm, user } = useCheckAdm();
 
     const { deleteDocument } = useDeleteDocument("guide-posts");
 

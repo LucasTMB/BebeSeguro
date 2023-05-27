@@ -15,7 +15,7 @@ import Button from 'react-bootstrap/Button';
 
 const Guides = () => {
 
-  const { adm } = useCheckAdm();
+  const { adm, user } = useCheckAdm();
 
   const { documents: posts, loading } = useFetchDocuments("guide-posts");
 
@@ -53,7 +53,7 @@ const Guides = () => {
         {adm &&
           <Link
             className={styles.createLink}
-            to="/guides/posts/create"
+            to={`/guides/posts/create/${user._id}`}
           >
             <Button
               className={styles.createBtn}

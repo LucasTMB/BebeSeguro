@@ -90,7 +90,7 @@ function App() {
               element={auth ? <GuidePost /> : <Navigate to="/login" />}
             />
             <Route
-              path='/guides/posts/create'
+              path='/guides/posts/create/:id'
               element={auth ? <CreateGuidePost /> : <Navigate to="/login" />}
             />
             <Route

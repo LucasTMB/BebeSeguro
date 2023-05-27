@@ -4,9 +4,9 @@ import styles from "./EditGuidePost.module.css";
 // hooks
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { useAuthValue } from "../../context/AuthContext";
 import { useFetchDocument } from "../../hooks/useFetchDocument";
 import { useUpdateDocument } from "../../hooks/useUpdateDocument";
+//import { useAuthValue } from "../../context/AuthContext";
 
 // bootstrap
 import Form from 'react-bootstrap/Form';
@@ -14,8 +14,8 @@ import Button from 'react-bootstrap/Button';
 import Alert from 'react-bootstrap/Alert';
 
 const EditGuidePost = () => {
-    const { id } = useParams();
-    const { document: post } = useFetchDocument("guide-posts", id);
+    const { id: idPost } = useParams();
+    const { document: post } = useFetchDocument("guide-posts", idPost);
 
     const [title, setTitle] = useState("");
     const [image, setImage] = useState("");
@@ -34,8 +34,6 @@ const EditGuidePost = () => {
             setTags(textTags);
         };
     }, [post]);
-
-    const { user } = useAuthValue();
 
     const { updateDocument, response } = useUpdateDocument("guide-posts");
 
@@ -60,11 +58,9 @@ const EditGuidePost = () => {
             image,
             body,
             tagsArray,
-            uid: user.uid,
-            createBy: user.displayName
         };
 
-        updateDocument(id, data);
+        updateDocument(idPost, data);
 
         // redirect to home page
         navigate("/guides");

@@ -2,14 +2,14 @@
 import styles from "./CreateGuidePost.module.css";
 
 // hooks
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { useAuthValue } from "../../context/AuthContext";
+import { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { useInsertDocument } from "../../hooks/useInsertDocument";
+import { useSelector, useDispatch } from "react-redux";
+//import { useAuthValue } from "../../context/AuthContext";
 
-// WYSIWYG
-import Editor from "react-quill";
-import "react-quill/dist/quill.snow.css";
+// Redux
+import { getUserDetails } from "../../slices/userSlice";
 
 // bootstrap
 import Form from 'react-bootstrap/Form';
@@ -23,7 +23,17 @@ const CreateGuidePost = () => {
   const [tags, setTags] = useState([]);
   const [formError, setFormError] = useState("");
 
-  const { user } = useAuthValue();
+  //const { user } = useAuthValue();
+  const { id } = useParams();
+
+  const dispatch = useDispatch();
+
+  const { user } = useSelector((state) => state.user);
+  const { user: userAuth } = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    dispatch(getUserDetails(id));
+  }, [dispatch, id]);
 
   const { insertDocument, response } = useInsertDocument("guide-posts");
 
@@ -55,16 +65,12 @@ const CreateGuidePost = () => {
       image,
       body,
       tagsArray,
-      uid: user.uid,
-      createBy: user.displayName,
+      uid: user._id,
+      createBy: user.name,
     });
 
     // redirect to home page
     navigate("/guides");
-  };
-
-  const handleEditorChange = (value) => {
-    setBody(value);
   };
 
   return (
