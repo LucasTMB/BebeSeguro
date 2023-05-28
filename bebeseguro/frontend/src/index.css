@@ -23,6 +23,7 @@ body {
 }
 
 .form_lr_input,
+.profile_form_input,
 .calculator_form_input {
     background-color: #D7AFAF;
     color: #FFF4F4;
@@ -31,12 +32,14 @@ body {
     transition: 0.5s all;
 }
 
-.form_lr_input::placeholder {
+.form_lr_input::placeholder,
+.profile_form_input::placeholder {
     color: #FFF4F4;
     font-weight: 600;
 }
 
-.form_lr_input:focus {
+.form_lr_input:focus,
+.profile_form_input:focus {
     background-color: #D7AFAF;
     color: #FFF4F4;
     border: none;
@@ -46,18 +49,21 @@ body {
 }
 
 .post_form,
-.calculator_form {
+.calculator_form,
+.profile_form {
     padding: 2em;
     background-color: #BC8080;
     border-radius: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-.post_form {
+.post_form,
+.profile_form {
     width: 80%;
 }
 
-.post_form_group {
+.post_form_group,
+.profile_form_group {
     display: flex;
     flex-direction: column;
 }

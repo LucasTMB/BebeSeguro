@@ -98,24 +98,28 @@ const EditProfile = () => {
                     Adicione uma imagem de perfil e conte mais sobre você...
                 </p>
             </div>
-            {(user.profileImage || previewImage) && (
-                <img
-                    className={styles.profile_image}
-                    src={
-                        previewImage ? URL.createObjectURL(previewImage) : `${uploads}/users/${user.profileImage}`
-                    }
-                    alt={user.name} />
-            )}
-            <Form onSubmit={handleSubmit}>
-                <Form.Group className="mb-3">
+            <Form
+                className="profile_form"
+                onSubmit={handleSubmit}
+            >
+                {(user.profileImage || previewImage) && (
+                    <img
+                        className={styles.profile_image}
+                        src={
+                            previewImage ? URL.createObjectURL(previewImage) : `${uploads}/users/${user.profileImage}`
+                        }
+                        alt={user.name} />
+                )}
+                <Form.Group className="profile_form_group mb-3">
                     <Form.Control
+                        className="profile_form_input"
                         type="text"
                         placeholder="Nome"
                         onChange={(e) => setName(e.target.value)}
                         value={name || ""}
                     />
                 </Form.Group>
-                <Form.Group className="mb-3">
+                <Form.Group className="profile_form_group mb-3">
                     <Form.Control
                         type="email"
                         placeholder="E-mail"
@@ -123,45 +127,61 @@ const EditProfile = () => {
                         value={email || ""}
                     />
                 </Form.Group>
-                <Form.Group className="mb-3">
-                    <Form.Label>Imagem do perfil</Form.Label>
+                <Form.Group className="profile_form_group mb-3">
+                    <Form.Label
+                        className="label"
+                    >
+                        Imagem do perfil
+                    </Form.Label>
                     <Form.Control
+                        className="profile_form_input"
                         type="file"
                         accept=".jpg, .png"
                         onChange={handleFile}
                     />
                 </Form.Group>
-                <Form.Group className="mb-3">
-                    <Form.Label>Biografia</Form.Label>
+                <Form.Group className="profile_form_group mb-3">
+                    <Form.Label
+                        className="label"
+                    >
+                        Biografia
+                    </Form.Label>
                     <Form.Control
+                        className="profile_form_input"
                         type="text"
                         placeholder="Descrição do perfil"
                         onChange={(e) => setBio(e.target.value)}
                         value={bio || ""}
                     />
                 </Form.Group>
-                <Form.Group className="mb-3">
-                    <Form.Label>Deseja alterar a senha?</Form.Label>
+                <Form.Group className="profile_form_group mb-3">
+                    <Form.Label
+                        className="label"
+                    >
+                        Deseja alterar a senha?
+                    </Form.Label>
                     <Form.Control
+                        className="profile_form_input"
                         type="password"
                         placeholder="Digite sua nova senha"
                         onChange={(e) => setPassword(e.target.value)}
                         value={password || ""}
                     />
                 </Form.Group>
-
-                {!loading &&
-                    <Button type="submit" className={styles.editBtn}>
-                        Atualizar
-                    </Button>
-                }
-                {loading &&
-                    <Button variant="secondary" disabled>
-                        Aguarde...
-                    </Button>
-                }
-                {error && <Message msg={error} type="danger" />}
-                {message && <Message msg={message} type="success" />}
+                <div className={styles.buttonsAndAlerts}>
+                    {!loading &&
+                        <Button type="submit" className={styles.editBtn}>
+                            Atualizar
+                        </Button>
+                    }
+                    {loading &&
+                        <Button variant="secondary" disabled>
+                            Aguarde...
+                        </Button>
+                    }
+                    {error && <Message msg={error} type="danger" />}
+                    {message && <Message msg={message} type="success" />}
+                </div>
             </Form>
         </div>
     )
