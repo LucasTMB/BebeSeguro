@@ -1,8 +1,13 @@
+.photo_item {
+    font-family: 'Roboto Slab', serif;
+}
+
 .photo_item img {
     width: 100%;
 }
 
-#home .photo_item h2 {
+.photo_item h2 {
+    text-align: left;
     margin-bottom: 0.2em;
 }
 
@@ -12,4 +17,6 @@
 
 .photo_author a {
     font-weight: bold;
+    text-decoration: underline;
+    color: #946262;
 }

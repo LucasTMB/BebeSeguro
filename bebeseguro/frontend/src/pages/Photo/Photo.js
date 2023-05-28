@@ -8,6 +8,10 @@ import PhotoItem from "../../components/PhotoItem";
 import LikeContainer from "../../components/LikeContainer";
 import { Link } from "react-router-dom";
 
+// bootstrap
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+
 // hooks
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
@@ -65,44 +69,51 @@ const Photo = () => {
 
     return (
         <div className={styles.photo}>
-            <PhotoItem photo={photo} />
-            <LikeContainer photo={photo} user={user} handleLike={handleLike} />
-            <div className={styles.message_container}>
-                {error && <Message msg={error} type="error" />}
-                {message && <Message msg={message} type="success" />}
-            </div>
-            <div className={styles.comments}>
-                {photo.comments && (
-                    <>
-                        <h3>Comentários ({photo.comments.length}):</h3>
-                        <form onSubmit={handleComment}>
-                            <input
-                                type="text"
-                                placeholder="Insira seu comentário..."
-                                onChange={(e) => setCommentText(e.target.value)}
-                                value={commentText || ""}
-                            />
-                            <input type="submit" value="Enviar" />
-                        </form>
-                        {photo.comments.length === 0 && <p>Não há comentários...</p>}
-                        {photo.comments.map((comment) => (
-                            <div className={styles.comment} key={comment.comment}>
-                                <div className={styles.author}>
-                                    {comment.userImage && (
-                                        <img
-                                            src={`${uploads}/users/${comment.userImage}`}
-                                            alt={comment.userName}
-                                        />
-                                    )}
-                                    <Link to={`/users/${comment.userId}`}>
-                                        <p>{comment.userName}</p>
-                                    </Link>
+            <div className={styles.photo_container}>
+                <PhotoItem photo={photo} />
+                <LikeContainer photo={photo} user={user} handleLike={handleLike} />
+                <div className={styles.message_container}>
+                    {error && <Message msg={error} type="error" />}
+                    {message && <Message msg={message} type="success" />}
+                </div>
+                <div className={styles.comments}>
+                    {photo.comments && (
+                        <>
+                            <h4>Comentários ({photo.comments.length}):</h4>
+                            <Form onSubmit={handleComment}>
+                                <Form.Group className="profile_form_group mb-3">
+                                    <Form.Control
+                                        className={styles.profile_form_input}
+                                        type="text"
+                                        placeholder="Insira seu comentário..."
+                                        onChange={(e) => setCommentText(e.target.value)}
+                                        value={commentText || ""}
+                                    />
+                                </Form.Group>
+                                <Button type="submit" className={styles.commentBtn}>
+                                    Enviar
+                                </Button>
+                            </Form>
+                            {photo.comments.length === 0 && <p>Não há comentários...</p>}
+                            {photo.comments.map((comment) => (
+                                <div className={styles.comment} key={comment.comment}>
+                                    <div className={styles.author}>
+                                        {comment.userImage && (
+                                            <img
+                                                src={`${uploads}/users/${comment.userImage}`}
+                                                alt={comment.userName}
+                                            />
+                                        )}
+                                        <Link to={`/users/${comment.userId}`}>
+                                            <p>{comment.userName}</p>
+                                        </Link>
+                                    </div>
+                                    <p>{comment.comment}</p>
                                 </div>
-                                <p>{comment.comment}</p>
-                            </div>
-                        ))}
-                    </>
-                )}
+                            ))}
+                        </>
+                    )}
+                </div>
             </div>
         </div>
     )

@@ -25,6 +25,10 @@
     margin-right: 10px;
 }
 
+.search_form input::placeholder {
+    color: #FEFEFE;
+}
+
 .search_button,
 .seeMoreBtn {
     background-color: #946262;
@@ -36,6 +40,10 @@
 .search_button:hover,
 .seeMoreBtn:hover {
     background-color: #A97676;
+}
+
+.seeMoreBtn {
+    margin: 1em 0;
 }
 
 .community .btn {
@@ -51,4 +59,23 @@
 
 .no_photos a {
     color: #0094f6;
+}
+
+@media only screen and (max-width: 600px) {
+    .search_form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .search_form input,
+    .search_button {
+        width: 90%;
+        margin: 0.5em 0;
+    }
+
+    .container {
+        width: 90%;
+    }
 }

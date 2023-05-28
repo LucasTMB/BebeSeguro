@@ -1,16 +1,35 @@
 .search {
+    background-color: #D7AFAF;
+    min-height: calc(100vh - 72px);
+}
+
+.search_container {
     width: 50%;
     margin: 0 auto;
-    padding-top: 2em;
+    padding: 1em 0;
 }
 
-.search h2 {
+.search .pageTitles {
     text-align: center;
+    color: #FEFEFE;
+    font-family: 'Roboto Slab', serif;
+    padding: 0.5em 0;
 }
 
-.search .btn {
-    display: block;
-    max-width: 80px;
-    text-align: center;
-    margin: 0.5em 0 2em 0;
+.seeMoreBtn {
+    background-color: #946262;
+    border: none;
+    border-radius: 0;
+    font-weight: 600;
+    margin: 1em 0;
+}
+
+.seeMoreBtn:hover {
+    background-color: #A97676;
+}
+
+@media only screen and (max-width: 600px) {
+    .search_container {
+        width: 90%;
+    }
 }

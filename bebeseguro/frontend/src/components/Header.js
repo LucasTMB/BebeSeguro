@@ -68,20 +68,6 @@ const Header = () => {
                 >
                   Guias
                 </NavLink>
-                <NavDropdown title="Calculadoras" id="basic-nav-dropdown">
-                  <NavLink to="/calculators/ovulation" className="nav-link">
-                    Período fértil
-                  </NavLink>
-                  <NavLink to="/calculators/gestage" className="nav-link">
-                    Idade gestacional
-                  </NavLink>
-                  <NavLink to="/calculators/imc" className="nav-link">
-                    IMC para gestantes
-                  </NavLink>
-                  <NavLink to="/calculators/deliverydate" className="nav-link">
-                    Data do parto
-                  </NavLink>
-                </NavDropdown>
                 <NavLink
                   to="/community"
                   className="nav-link"
@@ -90,6 +76,20 @@ const Header = () => {
                 </NavLink>
               </>
             )}
+            <NavDropdown title="Calculadoras" id="basic-nav-dropdown">
+              <NavLink to="/calculators/ovulation" className="nav-link">
+                Período fértil
+              </NavLink>
+              <NavLink to="/calculators/gestage" className="nav-link">
+                Idade gestacional
+              </NavLink>
+              <NavLink to="/calculators/imc" className="nav-link">
+                IMC para gestantes
+              </NavLink>
+              <NavLink to="/calculators/deliverydate" className="nav-link">
+                Data do parto
+              </NavLink>
+            </NavDropdown>
             <NavLink
               to="/about"
               className="nav-link"
@@ -119,12 +119,6 @@ const Header = () => {
                   className="nav-link"
                 >
                   Perfil
-                </NavLink>
-                <NavLink
-                  to="/profile"
-                  className="nav-link"
-                >
-                  Editar perfil
                 </NavLink>
                 <button onClick={handleLogout}>Sair</button>
               </>

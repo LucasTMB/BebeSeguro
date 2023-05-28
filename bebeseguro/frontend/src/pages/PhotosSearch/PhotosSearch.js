@@ -11,6 +11,9 @@ import LikeContainer from "../../components/LikeContainer";
 import PhotoItem from "../../components/PhotoItem";
 import { Link } from "react-router-dom";
 
+// bootstrap
+import Button from "react-bootstrap/Button";
+
 // Redux
 import { searchPhotos, like } from "../../slices/photoSlice";
 
@@ -42,18 +45,22 @@ const PhotosSearch = () => {
 
     return (
         <div className={styles.search}>
-            <h2>Você está buscando por: {search}</h2>
-            {photos &&
-                photos.map((photo) => (
-                    <div key={photo._id}>
-                        <PhotoItem photo={photo} />
-                        <LikeContainer photo={photo} user={user} handleLike={handleLike} />
-                        <Link className={styles.btn} to={`/photos/${photo._id}`}>
-                            Ver mais
-                        </Link>
-                    </div>
-                ))
-            }
+            <div className={styles.search_container}>
+                <h2 className={styles.pageTitles}>Você está buscando por: {search}</h2>
+                {photos &&
+                    photos.map((photo) => (
+                        <div key={photo._id}>
+                            <PhotoItem photo={photo} />
+                            <LikeContainer photo={photo} user={user} handleLike={handleLike} />
+                            <Link className={styles.seeMoreLink} to={`/photos/${photo._id}`}>
+                                <Button className={styles.seeMoreBtn}>
+                                    Ver mais
+                                </Button>
+                            </Link>
+                        </div>
+                    ))
+                }
+            </div>
         </div>
     )
 }

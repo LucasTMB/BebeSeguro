@@ -23,7 +23,6 @@ import GuidesSearch from './pages/GuidesSearch/GuidesSearch';
 import CreateGuidePost from "./pages/CreateGuidePost/CreateGuidePost";
 import EditGuidePost from './pages/EditGuidePost/EditGuidePost';
 import GuidePost from './pages/GuidePost/GuidePost';
-import Calculators from "./pages/Calculators/Calculators";
 import OvulationCalculator from "./pages/OvulationCalculator/OvulationCalculator";
 import GestAgeCalculator from "./pages/GestAgeCalculator/GestAgeCalculator";
 import ImcCalculator from "./pages/ImcCalculator/ImcCalculator";
@@ -98,24 +97,20 @@ function App() {
               element={auth ? <EditGuidePost /> : <Navigate to="/login" />}
             />
             <Route
-              path='/calculators'
-              element={auth ? <Calculators /> : <Navigate to="/login" />}
-            />
-            <Route
               path='/calculators/ovulation'
-              element={auth ? <OvulationCalculator /> : <Navigate to="/login" />}
+              element={<OvulationCalculator />}
             />
             <Route
               path='/calculators/gestage'
-              element={auth ? <GestAgeCalculator /> : <Navigate to="/login" />}
+              element={<GestAgeCalculator />}
             />
             <Route
               path='/calculators/imc'
-              element={auth ? <ImcCalculator /> : <Navigate to="/login" />}
+              element={<ImcCalculator />}
             />
             <Route
               path='/calculators/deliverydate'
-              element={auth ? <DeliveryDateCalculator /> : <Navigate to="/login" />}
+              element={<DeliveryDateCalculator />}
             />
             <Route
               path='/community'
