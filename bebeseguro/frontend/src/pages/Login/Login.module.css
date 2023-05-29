@@ -6,6 +6,7 @@
     background-color: #A97676;
 
     height: calc(100vh - 72px);
+    margin-top: 72px;
 }
 
 .slogan,

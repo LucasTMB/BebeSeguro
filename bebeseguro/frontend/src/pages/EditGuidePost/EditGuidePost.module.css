@@ -6,6 +6,7 @@
     background-color: #A97676;
     padding: 2em 0;
     min-height: calc(100vh - 72px);
+    margin-top: 72px;
 }
 
 .page_titles {

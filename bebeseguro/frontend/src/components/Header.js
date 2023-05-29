@@ -37,7 +37,7 @@ const Header = () => {
   }
 
   return (
-    <Navbar bg="light" expand="lg" className={styles.navbar}>
+    <Navbar fixed="top" bg="light" expand="lg" className={styles.navbar}>
       <Container className={styles.containerNavbar}>
         <NavLink
           to="/"

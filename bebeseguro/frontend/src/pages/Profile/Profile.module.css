@@ -1,6 +1,7 @@
 .profile {
   background-color: #D7AFAF;
   min-height: calc(100vh - 72px);
+  margin-top: 72px;
   font-family: 'Roboto Slab', serif;
 }
 

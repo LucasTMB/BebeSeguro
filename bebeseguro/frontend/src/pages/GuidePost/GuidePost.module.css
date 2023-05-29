@@ -6,6 +6,7 @@
     text-align: center;
     background-color: #fbd8d8;
     min-height: calc(100vh - 72px);
+    margin-top: 72px;
 }
 
 .postHead {
