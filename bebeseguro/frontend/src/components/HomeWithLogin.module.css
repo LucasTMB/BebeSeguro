@@ -1,0 +1,125 @@
+.homeWithLogin {
+    min-height: calc(100vh - 72px);
+}
+
+/* Banner */
+
+.banner {
+    background: linear-gradient(rgba(0, 0, 0, .10), rgba(0, 0, 0.10)100%), url(https://beepsaude.com.br/wp-content/uploads/2022/05/chegada-do-bebe-beep-saude.jpg);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+    min-height: calc(100vh - 72px);
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2em;
+}
+
+.bannerCommunity {
+    background: linear-gradient(rgba(0, 0, 0, .10), rgba(0, 0, 0.10)100%), url(https://plus.unsplash.com/premium_photo-1661913054386-9ac550f521a7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+    min-height: calc(100vh - 72px);
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+}
+
+.banner h1,
+.bannerCommunity h1,
+.bannerCommunity p {
+    color: #FEFEFE;
+}
+
+.container {
+    display: flex;
+    min-height: calc(100vh - 72px);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+img {
+    width: 50%;
+    object-fit: cover;
+}
+
+.titles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Roboto Slab', serif;
+    background-color: #A97676;
+    color: #FEFEFE;
+    width: 50%;
+}
+
+.titles h2 {
+    font-size: 3rem;
+    margin-bottom: .3em;
+}
+
+.titles p {
+    font-size: 1.2em;
+    width: 60%;
+    text-align: center;
+}
+
+
+.Btn {
+    background-color: #946262;
+    border: none;
+    font-weight: 600;
+    margin-top: .5em;
+    padding: 0.8em;
+    transition: 0.5s all;
+}
+
+.Btn:hover {
+    background: none;
+    transform: scale(1.1);
+}
+
+/* Responsividade */
+
+@media screen and (max-width: 1000px) {
+
+    .banner,
+    .bannerCommunity {
+        align-items: center;
+        background-position: right;
+        max-width: 100vw;
+    }
+
+    .banner h1,
+    .bannerCommunity h1,
+    .bannerCommunity p,
+    .Btn {
+        width: 80%;
+        text-align: center;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .titles {
+        width: 100%;
+        height: calc(100vh - 72px);
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    img {
+        display: none;
+    }
+}

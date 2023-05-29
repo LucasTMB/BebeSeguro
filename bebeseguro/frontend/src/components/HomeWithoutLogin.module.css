@@ -59,7 +59,7 @@
     align-items: center;
     justify-content: space-around;
     background: linear-gradient(to right, #D7AFAF 0%, #A97676 50%, #956969 100%);
-    height: 100vh;
+    height: calc(100vh - 72px);
 }
 
 .welcome .texts {
@@ -68,7 +68,7 @@
 }
 
 .welcome img {
-    width: 30%;
+    width: 29%;
     transition: 400ms;
 }
 
@@ -80,7 +80,7 @@
 
 .whyUse {
     background-color: #D7AFAF;
-    min-height: 100vh;
+    min-height: calc(100vh - 72px);
     padding: 1em 0;
     font-family: "Roboto Slab", serif;
 }

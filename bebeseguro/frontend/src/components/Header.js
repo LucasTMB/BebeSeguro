@@ -66,7 +66,7 @@ const Header = () => {
                   to="/guides"
                   className="nav-link"
                 >
-                  Guias
+                  Blog
                 </NavLink>
                 <NavLink
                   to="/community"

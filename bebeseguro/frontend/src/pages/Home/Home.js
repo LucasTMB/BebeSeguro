@@ -12,6 +12,7 @@ import { useState, useEffect } from "react";
 
 // components
 import HomeWithoutLogin from "../../components/HomeWithoutLogin";
+import HomeWithLogin from "../../components/HomeWithLogin";
 
 const Home = () => {
 
@@ -42,6 +43,9 @@ const Home = () => {
     <main>
       {!auth && (
         <HomeWithoutLogin />
+      )}
+      {auth && (
+        <HomeWithLogin />
       )}
     </main>
   )
