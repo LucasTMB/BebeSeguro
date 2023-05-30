@@ -101,8 +101,7 @@ img {
 
     .banner h1,
     .bannerCommunity h1,
-    .bannerCommunity p,
-    .Btn {
+    .bannerCommunity p {
         width: 80%;
         text-align: center;
     }
@@ -116,6 +115,17 @@ img {
         height: calc(100vh - 72px);
         justify-content: center;
         align-items: center;
+        text-align: center;
+    }
+
+    .titles h2 {
+        font-size: 2rem;
+        margin-bottom: .3em;
+    }
+    
+    .titles p {
+        font-size: 1em;
+        width: 60%;
         text-align: center;
     }
 
