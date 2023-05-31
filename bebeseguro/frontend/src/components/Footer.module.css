@@ -32,6 +32,12 @@
 
 .socialMedias a .apps {
     width: 40px;
+    transition: 0.5s all;
+}
+
+.socialMedias a .apps:hover {
+    transform: scale(1.1);
+    color: #7a5353;
 }
 
 @media screen and (max-width: 600px) {

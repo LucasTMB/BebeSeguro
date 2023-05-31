@@ -3,9 +3,12 @@
     min-height: 72px;
 }
 
-.containerNavbar {
-    padding: .5em 0;
-    background-color: #FEFEFE;
+.navbar a {
+    color: #7a5353;
+}
+
+.navbar a:hover {
+    color: #A97676;
 }
 
 .brand {
@@ -27,8 +30,4 @@
     font-weight: 900;
     text-transform: uppercase;
     color: #a97676;
-}
-
-.link-ativo {
-    color: #EB608C;
 }

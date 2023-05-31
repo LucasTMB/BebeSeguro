@@ -119,8 +119,8 @@
 }
 
 .textDiv {
-    width: 50%;
-    float: right;
+    width: 80%;
+    margin: 0 auto;
     background-color: #FEFEFE;
     padding: 2em;
     box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.5);
@@ -147,7 +147,7 @@
 
     .loginBtn Button,
     .registerBtn Button {
-        width: 80%;
+        width: 90%;
     }
 
     .loginBtn Button {
@@ -188,11 +188,5 @@
     .whyUse ul li {
         width: 90%;
         margin: 0;
-    }
-
-    .textDiv {
-        float: none;
-        width: 90%;
-        margin: 0 auto;
     }
 }

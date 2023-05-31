@@ -1,0 +1,26 @@
+.tp {
+    background-color: #D7AFAF;
+    margin-top: 72px;
+    height: calc(100vh - 72px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto SLab', serif;
+    color: #7a5353;
+}
+
+.tp img {
+    width: 18%;
+}
+
+.tp Button {
+    background-color: #946262;
+    border: none;
+    border-radius: 0;
+    font-weight: 600;
+}
+
+.tp Button:hover {
+    background-color: #A97676; 
+}

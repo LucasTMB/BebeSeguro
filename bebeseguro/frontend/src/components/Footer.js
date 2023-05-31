@@ -24,13 +24,13 @@ const Footer = () => {
           </p>
         </div>
         <div className={styles.socialMedias}>
-          <a href="">
+          <a href="https://twitter.com/BebeSeguro74032/following" target="_blank">
             <BsTwitter className={styles.apps} />
           </a>
-          <a href="">
+          <a href="https://www.instagram.com/bebesseguro2023/?igshid=MzNlNGNkZWQ4Mg%3D%3D" target="_blank">
             <BsInstagram className={styles.apps} />
           </a>
-          <a href="">
+          <a href="" target="_blank">
             <BsFacebook className={styles.apps} />
           </a>
         </div>

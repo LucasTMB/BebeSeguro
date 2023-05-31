@@ -1,8 +1,12 @@
 import styles from "./Store.module.css";
 
+import TechnicalProblems from "../../components/TechnicalProblems";
+
 const Store = () => {
   return (
-    <div>Store</div>
+    <div>
+      <TechnicalProblems />
+    </div>
   )
 }
 

@@ -5,6 +5,7 @@ import { uploads } from "../../utils/config";
 // hooks
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from "react-router-dom";
 
 // redux
 import { profile, resetMessage, updateProfile } from "../../slices/userSlice";
@@ -18,6 +19,7 @@ import Button from 'react-bootstrap/Button';
 
 const EditProfile = () => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const { user, message, error, loading } = useSelector((state) => state.user);
 
@@ -75,6 +77,8 @@ const EditProfile = () => {
         setTimeout(() => {
             dispatch(resetMessage())
         }, 2000);
+
+        navigate(`/users/${user._id}`);
 
     };
 
