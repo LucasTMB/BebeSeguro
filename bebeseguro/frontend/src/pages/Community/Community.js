@@ -58,7 +58,7 @@ const Community = () => {
       >
         <input
           type="text"
-          placeholder="Ou busque por tags..."
+          placeholder="Pesquisar..."
           onChange={(e) => setQuery(e.target.value)}
         />
         <Button

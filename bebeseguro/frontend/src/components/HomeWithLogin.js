@@ -40,7 +40,7 @@ const HomeWithLogin = () => {
     <div className={styles.HomeWithLogin}>
       <section className={styles.banner}>
         <h1 className='reveal'>
-          Seja bem-vinda a BebeSeguro!
+          Seja bem-vindo(a) ao BebeSeguro!
         </h1>
       </section>
 
