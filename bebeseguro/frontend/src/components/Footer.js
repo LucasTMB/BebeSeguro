@@ -30,7 +30,7 @@ const Footer = () => {
           <a href="https://www.instagram.com/bebesseguro2023/?igshid=MzNlNGNkZWQ4Mg%3D%3D" target="_blank">
             <BsInstagram className={styles.apps} />
           </a>
-          <a href="" target="_blank">
+          <a href="https://www.facebook.com/profile.php?id=100092705422405" target="_blank">
             <BsFacebook className={styles.apps} />
           </a>
         </div>

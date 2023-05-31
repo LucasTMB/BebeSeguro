@@ -106,22 +106,3 @@ Button[disabled] {
 .hide {
     display: none;
 }
-
-/*
-a,
-nav button {
-    text-decoration: none;
-    background-color: transparent;
-    border: none;
-    color: #FFF;
-    transition: .4s;
-    font-size: 1em;
-    cursor: pointer;
-    font-family: "Montserrat", sans-serif;
-}
-
-a:hover,
-nav button:hover {
-    color: #EE5D6F;
-    border-color: #EE5D6F;
-}*/

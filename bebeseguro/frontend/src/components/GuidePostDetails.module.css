@@ -20,16 +20,9 @@
 .title {
     display: flex;
     align-items: center;
-    background-color: #FEFEFE;
-    height: 12%;
-}
-
-.title h2 {
-    max-width: 90%;
-    color: #A97676;
-    font-size: 1em;
-    font-weight: 700;
-    padding: .5em;
+    background-color: #A97676;
+    color: #FEFEFE;
+    height: 15%;
 }
 
 .icon,
@@ -38,42 +31,18 @@
     margin-right: 5px;
 }
 
-.createBy,
-.date,
-.cardButton {
-    margin-left: .5em;
-    margin-bottom: 2px;
-}
-
-.createBy {
-    display: flex;
-    align-items: center;
-    font-size: 1em;
-    color: #FEFEFE;
-}
-
-.date {
-    display: flex;
-    align-items: center;
-    color: #FEFEFE;
-    font-size: 1em;
-}
-
 .tags {
     display: flex;
-    color: #FEFEFE;
-    margin-left: .5em;
-}
-
-.tagsIcon {
-    margin-top: 5px;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 .tags p {
+    margin-top: 10px;
     margin-right: .3em;
 }
 
-.tags span {
+.tags p span {
     font-weight: bold;
 }
 
@@ -97,8 +66,20 @@
 }
 
 /* Estilo para telas pequenas */
-@media (max-width: 767px) {
+@media screen and (max-width: 730px) {
     .card {
       width: 100%;
+    }
+}
+
+@media screen and (min-width: 731px) and (max-width: 1000px) {
+    .card {
+      width: 40%;
+    }
+}
+
+@media screen and (min-width: 1001px) and (max-width: 1400px) {
+    .card {
+      width: 30%;
     }
 }

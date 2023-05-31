@@ -10,6 +10,8 @@ import { useDeleteDocument } from "../hooks/useDeleteDocument";
 
 // bootstrap 
 import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
+import ListGroup from 'react-bootstrap/ListGroup';
 
 // date format
 import { format } from "date-fns";
@@ -38,50 +40,59 @@ const GuidePostDetails = ({ post }) => {
     }
 
     return (
-        <div className={styles.card}>
-            <img className={styles.image} src={post.image} alt={post.title} />
-            <div className={styles.title}>
-                <h2>
-                    <BsFillChatRightTextFill /> {filterTitle(post.title)}
-                </h2>
-            </div>
-            <p className={styles.createBy}>
-                <BsFillPersonLinesFill className={styles.icon} /> {post.createBy}
-            </p>
-            <p className={styles.date}>
-                <BsFillCalendar2WeekFill className={styles.calendar} /> {formattedDate}
-            </p>
-            <div className={styles.tags}>
-                <BsFillTagsFill className={styles.tagsIcon} />
-                {post.tagsArray.map((tag) => (
-                    <p key={tag}>
-                        <span>#</span>
-                        {tag}
-                    </p>
-                ))}
-            </div>
-            <Link to={`/guides/posts/${post.id}`}>
-                <Button className={styles.cardButton}>
-                    Ler artigo
-                </Button>
-            </Link>
-            {adm &&
-                <>
-                    <Link to={`/guides/posts/edit/${post.id}`}>
-                        <Button className={styles.cardButton}>
-                            Editar
-                        </Button>
-                    </Link>
-                    <Button
-                        className={`${styles.cardButton} ${styles.deleteButton}`}
-                        onClick={() => deleteDocument(post.id)}
-                        variant="danger"
-                    >
-                        Excluir
+        <Card className={styles.card}>
+            <Card.Img className={styles.image} variant="top" src={post.image} />
+            <Card.Body className={styles.title}>
+                <Card.Title>
+                    {filterTitle(post.title)}
+                </Card.Title>
+            </Card.Body>
+            <ListGroup className="list-group-flush">
+                <ListGroup.Item>
+                    <BsFillPersonLinesFill className={styles.icon} /> {post.createBy}
+                </ListGroup.Item>
+                <ListGroup.Item>
+                    <BsFillCalendar2WeekFill className={styles.calendar} /> {formattedDate}
+                </ListGroup.Item>
+                <ListGroup.Item>
+                    <div className={styles.tags}>
+                        <BsFillTagsFill className={styles.tagsIcon} />
+                        {post.tagsArray.map((tag) => (
+                            <p key={tag}>
+                                <span>#</span>
+                                {tag}
+                            </p>
+                        ))}
+                    </div>
+                </ListGroup.Item>
+            </ListGroup>
+            <Card.Body>
+                <Card.Link href={`/guides/posts/${post.id}`}>
+                    <Button className={styles.cardButton}>
+                        Ler
                     </Button>
-                </>
-            }
-        </div>
+                </Card.Link>
+                {adm &&
+                    <>
+                        <Card.Link href={`/guides/posts/edit/${post.id}`}>
+                            <Button className={styles.cardButton}>
+                                Editar
+                            </Button>
+                        </Card.Link>
+                        <Card.Link>
+                            <Button
+                                className={`${styles.cardButton} ${styles.deleteButton}`}
+                                onClick={() => deleteDocument(post.id)}
+                                variant="danger"
+                            >
+                                Excluir
+                            </Button>
+                        </Card.Link>
+                    </>
+                }
+            </Card.Body>
+        </Card>
+
     )
 }
 
